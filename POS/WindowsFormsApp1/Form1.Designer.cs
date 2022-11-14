@@ -43,10 +43,8 @@
             this.Num4 = new System.Windows.Forms.Button();
             this.Num3 = new System.Windows.Forms.Button();
             this.Num2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.Num1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -67,6 +65,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Sale
@@ -89,7 +90,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(690, 183);
+            this.Cancel.Location = new System.Drawing.Point(639, 251);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(98, 28);
             this.Cancel.TabIndex = 86;
@@ -98,7 +99,7 @@
             // 
             // Payment
             // 
-            this.Payment.Location = new System.Drawing.Point(585, 183);
+            this.Payment.Location = new System.Drawing.Point(638, 183);
             this.Payment.Name = "Payment";
             this.Payment.Size = new System.Drawing.Size(99, 28);
             this.Payment.TabIndex = 85;
@@ -114,6 +115,7 @@
             this.Addbutton.TabIndex = 84;
             this.Addbutton.Text = "등록";
             this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // ACbutton
             // 
@@ -124,6 +126,7 @@
             this.ACbutton.TabIndex = 83;
             this.ACbutton.Text = "AC";
             this.ACbutton.UseVisualStyleBackColor = true;
+            this.ACbutton.Click += new System.EventHandler(this.ACbutton_Click);
             // 
             // Num0
             // 
@@ -134,6 +137,7 @@
             this.Num0.TabIndex = 82;
             this.Num0.Text = "0";
             this.Num0.UseVisualStyleBackColor = true;
+            this.Num0.Click += new System.EventHandler(this.Num0_Click);
             // 
             // Num9
             // 
@@ -144,6 +148,7 @@
             this.Num9.TabIndex = 81;
             this.Num9.Text = "9";
             this.Num9.UseVisualStyleBackColor = true;
+            this.Num9.Click += new System.EventHandler(this.Num9_Click);
             // 
             // Num8
             // 
@@ -154,6 +159,7 @@
             this.Num8.TabIndex = 80;
             this.Num8.Text = "8";
             this.Num8.UseVisualStyleBackColor = true;
+            this.Num8.Click += new System.EventHandler(this.Num8_Click);
             // 
             // Num7
             // 
@@ -164,6 +170,7 @@
             this.Num7.TabIndex = 79;
             this.Num7.Text = "7";
             this.Num7.UseVisualStyleBackColor = true;
+            this.Num7.Click += new System.EventHandler(this.Num7_Click);
             // 
             // Num6
             // 
@@ -174,6 +181,7 @@
             this.Num6.TabIndex = 78;
             this.Num6.Text = "6";
             this.Num6.UseVisualStyleBackColor = true;
+            this.Num6.Click += new System.EventHandler(this.Num6_Click);
             // 
             // Num5
             // 
@@ -184,6 +192,7 @@
             this.Num5.TabIndex = 77;
             this.Num5.Text = "5";
             this.Num5.UseVisualStyleBackColor = true;
+            this.Num5.Click += new System.EventHandler(this.Num5_Click);
             // 
             // Num4
             // 
@@ -194,6 +203,7 @@
             this.Num4.TabIndex = 76;
             this.Num4.Text = "4";
             this.Num4.UseVisualStyleBackColor = true;
+            this.Num4.Click += new System.EventHandler(this.Num4_Click);
             // 
             // Num3
             // 
@@ -204,6 +214,7 @@
             this.Num3.TabIndex = 75;
             this.Num3.Text = "3";
             this.Num3.UseVisualStyleBackColor = true;
+            this.Num3.Click += new System.EventHandler(this.Num3_Click);
             // 
             // Num2
             // 
@@ -214,18 +225,7 @@
             this.Num2.TabIndex = 74;
             this.Num2.Text = "2";
             this.Num2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(406, 183);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 28);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Num2.Click += new System.EventHandler(this.Num2_Click);
             // 
             // Num1
             // 
@@ -236,6 +236,7 @@
             this.Num1.TabIndex = 72;
             this.Num1.Text = "1";
             this.Num1.UseVisualStyleBackColor = true;
+            this.Num1.Click += new System.EventHandler(this.Num1_Click);
             // 
             // listBox1
             // 
@@ -248,18 +249,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(377, 132);
             this.listBox1.TabIndex = 71;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 80);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button20
             // 
@@ -421,11 +410,43 @@
             this.button1.TabIndex = 50;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(12, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(379, 81);
+            this.textBox1.TabIndex = 89;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("굴림", 16F);
+            this.textBox2.Location = new System.Drawing.Point(406, 183);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(159, 32);
+            this.textBox2.TabIndex = 90;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(638, 217);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(99, 28);
+            this.Delete.TabIndex = 91;
+            this.Delete.Text = "제거";
+            this.Delete.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Sale);
             this.Controls.Add(this.Stock);
             this.Controls.Add(this.Cancel);
@@ -441,10 +462,8 @@
             this.Controls.Add(this.Num4);
             this.Controls.Add(this.Num3);
             this.Controls.Add(this.Num2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.Num1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -468,6 +487,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -488,10 +508,8 @@
         private System.Windows.Forms.Button Num4;
         private System.Windows.Forms.Button Num3;
         private System.Windows.Forms.Button Num2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Num1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
@@ -512,6 +530,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button Delete;
     }
 }
 
