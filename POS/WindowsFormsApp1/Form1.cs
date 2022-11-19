@@ -16,77 +16,44 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void Num1_Click(object sender, EventArgs e)
+        private void AddSalePrice(string addnum)//총 결재 금액 창에 금액 추가하는 메소드
         {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "1";
-            else textBox2.Text += "1";
+            saletextBox.Text = (int.Parse(saletextBox.Text)+int.Parse(addnum)).ToString();
+        }
+        private void Num(object sender, EventArgs e)//판매창의 추가 결재 금액 숫자 버튼 이벤트처리기
+        {
+            Button num = sender as Button;
+            if (int.Parse(addpricetextBox.Text) == 0) addpricetextBox.Text = num.Text;//추가 결재 금액 텍스트 박스 = addpricetextBox
+            else addpricetextBox.Text += num.Text;
+        }
+        private void ACbutton_Click(object sender, EventArgs e)//판매창의 AC버튼 이벤트 처리기
+        {
+            if (int.Parse(addpricetextBox.Text) != 0) addpricetextBox.Text = "0";
+        }
+        private void Addbutton_Click(object sender, EventArgs e)//판매창의 추가 결재 금액 등록 버튼 이벤트처리기
+        {
+            if (addpricetextBox.Text == "0") return;
+            AddSalePrice(addpricetextBox.Text);
+            pricelistBox.Items.Add("추가금액\t\t\t" + addpricetextBox.Text);//결재할 상품 목록 리스트박스 = pricelistBox
+            addpricetextBox.Text = "0";
+        }
+        private void DeletePrice_Click(object sender, EventArgs e)
+        {
+            if (pricelistBox.SelectedIndex > -1) pricelistBox.Items.RemoveAt(pricelistBox.SelectedIndex);
         }
 
-        private void Num2_Click(object sender, EventArgs e)
+        private void CancelSale_Click(object sender, EventArgs e)
         {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "2";
-            else textBox2.Text += "2";
+            pricelistBox.Items.Clear();
+            saletextBox.Text = "0";
         }
 
-        private void Num3_Click(object sender, EventArgs e)
+        private void Stock_Click(object sender, EventArgs e)
         {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "3";
-            else textBox2.Text += "3";
-        }
-
-        private void Num4_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "4";
-            else textBox2.Text += "4";
-        }
-
-        private void Num5_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "5";
-            else textBox2.Text += "5";
-        }
-
-        private void Num6_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "6";
-            else textBox2.Text += "6";
-        }
-
-        private void Num7_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "7";
-            else textBox2.Text += "7";
-        }
-
-        private void Num8_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "8";
-            else textBox2.Text += "8";
-        }
-
-        private void Num9_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "9";
-            else textBox2.Text += "9";
-        }
-
-        private void Num0_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) == 0) textBox2.Text = "0";
-            else textBox2.Text += "0";
-        }
-
-        private void ACbutton_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(textBox2.Text) != 0) textBox2.Text = "0";
-        }
-
-        private void Addbutton_Click(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "0") return;
-            listBox1.Items.Add("임시계산\t\t\t" + textBox2.Text);
-            textBox2.Text = "0";
+            Form2 form2 = new Form2();
+            form2.Tag = this;
+            form2.Show();
+            this.Hide();
         }
     }
 }
