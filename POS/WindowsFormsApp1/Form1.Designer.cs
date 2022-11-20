@@ -30,7 +30,7 @@
         {
             this.Sale = new System.Windows.Forms.Button();
             this.Stock = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
+            this.CancelSale = new System.Windows.Forms.Button();
             this.Payment = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.ACbutton = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.Num3 = new System.Windows.Forms.Button();
             this.Num2 = new System.Windows.Forms.Button();
             this.Num1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pricelistBox = new System.Windows.Forms.ListBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -65,9 +65,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Delete = new System.Windows.Forms.Button();
+            this.saletextBox = new System.Windows.Forms.TextBox();
+            this.addpricetextBox = new System.Windows.Forms.TextBox();
+            this.DeletePrice = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.stuffcount = new System.Windows.Forms.TextBox();
+            this.add = new System.Windows.Forms.Button();
+            this.cancle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Sale
@@ -78,6 +84,7 @@
             this.Sale.TabIndex = 88;
             this.Sale.Text = "매출";
             this.Sale.UseVisualStyleBackColor = true;
+            this.Sale.Click += new System.EventHandler(this.Sale_Click);
             // 
             // Stock
             // 
@@ -87,15 +94,17 @@
             this.Stock.TabIndex = 87;
             this.Stock.Text = "재고 관리";
             this.Stock.UseVisualStyleBackColor = true;
+            this.Stock.Click += new System.EventHandler(this.Stock_Click);
             // 
-            // Cancel
+            // CancelSale
             // 
-            this.Cancel.Location = new System.Drawing.Point(639, 251);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(98, 28);
-            this.Cancel.TabIndex = 86;
-            this.Cancel.Text = "취소";
-            this.Cancel.UseVisualStyleBackColor = true;
+            this.CancelSale.Location = new System.Drawing.Point(639, 251);
+            this.CancelSale.Name = "CancelSale";
+            this.CancelSale.Size = new System.Drawing.Size(98, 28);
+            this.CancelSale.TabIndex = 86;
+            this.CancelSale.Text = "취소";
+            this.CancelSale.UseVisualStyleBackColor = true;
+            this.CancelSale.Click += new System.EventHandler(this.CancelSale_Click);
             // 
             // Payment
             // 
@@ -137,7 +146,7 @@
             this.Num0.TabIndex = 82;
             this.Num0.Text = "0";
             this.Num0.UseVisualStyleBackColor = true;
-            this.Num0.Click += new System.EventHandler(this.Num0_Click);
+            this.Num0.Click += new System.EventHandler(this.Num);
             // 
             // Num9
             // 
@@ -148,7 +157,7 @@
             this.Num9.TabIndex = 81;
             this.Num9.Text = "9";
             this.Num9.UseVisualStyleBackColor = true;
-            this.Num9.Click += new System.EventHandler(this.Num9_Click);
+            this.Num9.Click += new System.EventHandler(this.Num);
             // 
             // Num8
             // 
@@ -159,7 +168,7 @@
             this.Num8.TabIndex = 80;
             this.Num8.Text = "8";
             this.Num8.UseVisualStyleBackColor = true;
-            this.Num8.Click += new System.EventHandler(this.Num8_Click);
+            this.Num8.Click += new System.EventHandler(this.Num);
             // 
             // Num7
             // 
@@ -170,7 +179,7 @@
             this.Num7.TabIndex = 79;
             this.Num7.Text = "7";
             this.Num7.UseVisualStyleBackColor = true;
-            this.Num7.Click += new System.EventHandler(this.Num7_Click);
+            this.Num7.Click += new System.EventHandler(this.Num);
             // 
             // Num6
             // 
@@ -181,7 +190,7 @@
             this.Num6.TabIndex = 78;
             this.Num6.Text = "6";
             this.Num6.UseVisualStyleBackColor = true;
-            this.Num6.Click += new System.EventHandler(this.Num6_Click);
+            this.Num6.Click += new System.EventHandler(this.Num);
             // 
             // Num5
             // 
@@ -192,7 +201,7 @@
             this.Num5.TabIndex = 77;
             this.Num5.Text = "5";
             this.Num5.UseVisualStyleBackColor = true;
-            this.Num5.Click += new System.EventHandler(this.Num5_Click);
+            this.Num5.Click += new System.EventHandler(this.Num);
             // 
             // Num4
             // 
@@ -203,7 +212,7 @@
             this.Num4.TabIndex = 76;
             this.Num4.Text = "4";
             this.Num4.UseVisualStyleBackColor = true;
-            this.Num4.Click += new System.EventHandler(this.Num4_Click);
+            this.Num4.Click += new System.EventHandler(this.Num);
             // 
             // Num3
             // 
@@ -214,7 +223,7 @@
             this.Num3.TabIndex = 75;
             this.Num3.Text = "3";
             this.Num3.UseVisualStyleBackColor = true;
-            this.Num3.Click += new System.EventHandler(this.Num3_Click);
+            this.Num3.Click += new System.EventHandler(this.Num);
             // 
             // Num2
             // 
@@ -225,7 +234,7 @@
             this.Num2.TabIndex = 74;
             this.Num2.Text = "2";
             this.Num2.UseVisualStyleBackColor = true;
-            this.Num2.Click += new System.EventHandler(this.Num2_Click);
+            this.Num2.Click += new System.EventHandler(this.Num);
             // 
             // Num1
             // 
@@ -236,19 +245,17 @@
             this.Num1.TabIndex = 72;
             this.Num1.Text = "1";
             this.Num1.UseVisualStyleBackColor = true;
-            this.Num1.Click += new System.EventHandler(this.Num1_Click);
+            this.Num1.Click += new System.EventHandler(this.Num);
             // 
-            // listBox1
+            // pricelistBox
             // 
-            this.listBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "상품명\t\t\t가격"});
-            this.listBox1.Location = new System.Drawing.Point(411, 24);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(377, 132);
-            this.listBox1.TabIndex = 71;
+            this.pricelistBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pricelistBox.FormattingEnabled = true;
+            this.pricelistBox.ItemHeight = 16;
+            this.pricelistBox.Location = new System.Drawing.Point(406, 36);
+            this.pricelistBox.Name = "pricelistBox";
+            this.pricelistBox.Size = new System.Drawing.Size(405, 132);
+            this.pricelistBox.TabIndex = 71;
             // 
             // button20
             // 
@@ -257,6 +264,7 @@
             this.button20.Size = new System.Drawing.Size(71, 66);
             this.button20.TabIndex = 69;
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button19
             // 
@@ -265,6 +273,7 @@
             this.button19.Size = new System.Drawing.Size(71, 66);
             this.button19.TabIndex = 68;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button18
             // 
@@ -273,6 +282,7 @@
             this.button18.Size = new System.Drawing.Size(71, 66);
             this.button18.TabIndex = 67;
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button17
             // 
@@ -281,6 +291,7 @@
             this.button17.Size = new System.Drawing.Size(71, 66);
             this.button17.TabIndex = 66;
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button16
             // 
@@ -289,6 +300,7 @@
             this.button16.Size = new System.Drawing.Size(71, 66);
             this.button16.TabIndex = 65;
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button15
             // 
@@ -297,6 +309,7 @@
             this.button15.Size = new System.Drawing.Size(71, 66);
             this.button15.TabIndex = 64;
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button14
             // 
@@ -305,6 +318,7 @@
             this.button14.Size = new System.Drawing.Size(71, 66);
             this.button14.TabIndex = 63;
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button13
             // 
@@ -313,6 +327,7 @@
             this.button13.Size = new System.Drawing.Size(71, 66);
             this.button13.TabIndex = 62;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button12
             // 
@@ -321,6 +336,7 @@
             this.button12.Size = new System.Drawing.Size(71, 66);
             this.button12.TabIndex = 61;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button11
             // 
@@ -329,6 +345,7 @@
             this.button11.Size = new System.Drawing.Size(71, 66);
             this.button11.TabIndex = 60;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button10
             // 
@@ -337,6 +354,7 @@
             this.button10.Size = new System.Drawing.Size(71, 66);
             this.button10.TabIndex = 59;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button9
             // 
@@ -345,6 +363,7 @@
             this.button9.Size = new System.Drawing.Size(71, 66);
             this.button9.TabIndex = 58;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button8
             // 
@@ -353,6 +372,7 @@
             this.button8.Size = new System.Drawing.Size(71, 66);
             this.button8.TabIndex = 57;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button7
             // 
@@ -361,6 +381,7 @@
             this.button7.Size = new System.Drawing.Size(71, 66);
             this.button7.TabIndex = 56;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button6
             // 
@@ -369,6 +390,7 @@
             this.button6.Size = new System.Drawing.Size(71, 66);
             this.button6.TabIndex = 55;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button5
             // 
@@ -377,6 +399,7 @@
             this.button5.Size = new System.Drawing.Size(71, 66);
             this.button5.TabIndex = 54;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button4
             // 
@@ -385,6 +408,7 @@
             this.button4.Size = new System.Drawing.Size(71, 66);
             this.button4.TabIndex = 53;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button3
             // 
@@ -393,6 +417,7 @@
             this.button3.Size = new System.Drawing.Size(71, 66);
             this.button3.TabIndex = 52;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button2
             // 
@@ -401,6 +426,7 @@
             this.button2.Size = new System.Drawing.Size(71, 66);
             this.button2.TabIndex = 51;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button1
             // 
@@ -409,47 +435,118 @@
             this.button1.Size = new System.Drawing.Size(71, 66);
             this.button1.TabIndex = 50;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // textBox1
+            // saletextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(12, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(379, 81);
-            this.textBox1.TabIndex = 89;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.saletextBox.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.saletextBox.Location = new System.Drawing.Point(12, 20);
+            this.saletextBox.Name = "saletextBox";
+            this.saletextBox.Size = new System.Drawing.Size(379, 81);
+            this.saletextBox.TabIndex = 89;
+            this.saletextBox.Text = "0";
+            this.saletextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // addpricetextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("굴림", 16F);
-            this.textBox2.Location = new System.Drawing.Point(406, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 32);
-            this.textBox2.TabIndex = 90;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.addpricetextBox.Font = new System.Drawing.Font("굴림", 16F);
+            this.addpricetextBox.Location = new System.Drawing.Point(406, 183);
+            this.addpricetextBox.Name = "addpricetextBox";
+            this.addpricetextBox.Size = new System.Drawing.Size(159, 32);
+            this.addpricetextBox.TabIndex = 90;
+            this.addpricetextBox.Text = "0";
+            this.addpricetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Delete
+            // DeletePrice
             // 
-            this.Delete.Location = new System.Drawing.Point(638, 217);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(99, 28);
-            this.Delete.TabIndex = 91;
-            this.Delete.Text = "제거";
-            this.Delete.UseVisualStyleBackColor = true;
+            this.DeletePrice.Location = new System.Drawing.Point(638, 217);
+            this.DeletePrice.Name = "DeletePrice";
+            this.DeletePrice.Size = new System.Drawing.Size(99, 28);
+            this.DeletePrice.TabIndex = 91;
+            this.DeletePrice.Text = "제거";
+            this.DeletePrice.UseVisualStyleBackColor = true;
+            this.DeletePrice.Click += new System.EventHandler(this.DeletePrice_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 14F);
+            this.label1.Location = new System.Drawing.Point(404, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 19);
+            this.label1.TabIndex = 92;
+            this.label1.Text = "상품명";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 14F);
+            this.label2.Location = new System.Drawing.Point(619, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 19);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "가격";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 14F);
+            this.label3.Location = new System.Drawing.Point(764, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "개수";
+            // 
+            // stuffcount
+            // 
+            this.stuffcount.Enabled = false;
+            this.stuffcount.Font = new System.Drawing.Font("굴림", 16F);
+            this.stuffcount.Location = new System.Drawing.Point(12, 107);
+            this.stuffcount.Name = "stuffcount";
+            this.stuffcount.Size = new System.Drawing.Size(159, 32);
+            this.stuffcount.TabIndex = 95;
+            this.stuffcount.Text = "0";
+            this.stuffcount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // add
+            // 
+            this.add.Enabled = false;
+            this.add.Location = new System.Drawing.Point(186, 107);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(89, 28);
+            this.add.TabIndex = 96;
+            this.add.Text = "등록";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // cancle
+            // 
+            this.cancle.Enabled = false;
+            this.cancle.Location = new System.Drawing.Point(291, 107);
+            this.cancle.Name = "cancle";
+            this.cancle.Size = new System.Drawing.Size(100, 28);
+            this.cancle.TabIndex = 97;
+            this.cancle.Text = "취소";
+            this.cancle.UseVisualStyleBackColor = true;
+            this.cancle.Click += new System.EventHandler(this.cancle_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.cancle);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.stuffcount);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DeletePrice);
+            this.Controls.Add(this.addpricetextBox);
+            this.Controls.Add(this.saletextBox);
             this.Controls.Add(this.Sale);
             this.Controls.Add(this.Stock);
-            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.CancelSale);
             this.Controls.Add(this.Payment);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.ACbutton);
@@ -463,7 +560,7 @@
             this.Controls.Add(this.Num3);
             this.Controls.Add(this.Num2);
             this.Controls.Add(this.Num1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.pricelistBox);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -485,7 +582,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "POS_Sale";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,7 +592,7 @@
 
         private System.Windows.Forms.Button Sale;
         private System.Windows.Forms.Button Stock;
-        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button CancelSale;
         private System.Windows.Forms.Button Payment;
         private System.Windows.Forms.Button Addbutton;
         private System.Windows.Forms.Button ACbutton;
@@ -509,7 +606,7 @@
         private System.Windows.Forms.Button Num3;
         private System.Windows.Forms.Button Num2;
         private System.Windows.Forms.Button Num1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox pricelistBox;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
@@ -530,9 +627,15 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.TextBox saletextBox;
+        private System.Windows.Forms.TextBox addpricetextBox;
+        private System.Windows.Forms.Button DeletePrice;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox stuffcount;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button cancle;
     }
 }
 

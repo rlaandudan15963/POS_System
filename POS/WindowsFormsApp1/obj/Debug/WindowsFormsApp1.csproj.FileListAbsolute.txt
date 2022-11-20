@@ -9,3 +9,5 @@ C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFor
 C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\limm1\Desktop\2-2학기\비주얼프로그래밍\POS_GUI\POS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
