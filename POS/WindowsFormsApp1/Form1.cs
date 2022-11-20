@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        string stuffstr;//상품명 임시 저장할 변수
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +21,38 @@ namespace WindowsFormsApp1
         {
             saletextBox.Text = (int.Parse(saletextBox.Text)+int.Parse(addnum)).ToString();
         }
+        private void SaleStuff(object sender, EventArgs e)//상품 버튼 클릭시 이벤트 처리
+        {
+            Button Stuff = sender as Button;//클릭한 버튼
+            add.Enabled = true;//확인 활성화
+            cancle.Enabled = true;//취소 활성화
+            stuffcount.Enabled = true;//갯수 텍스트 박스 활성화
+            stuffstr = Stuff.Text;
+        }
+        private void add_Click(object sender, EventArgs e)//(확인)상품을 가격표에 등록
+        {
+            if (int.TryParse(stuffcount.Text, out _))
+            {
+                pricelistBox.Items.Add($"{stuffstr}\t\t[가격데이터]\t\t{stuffcount.Text}");//판매대기 리스트박스에 저장
+                //AddSalePrice(가격데이터); //인자로 넘겨주길 바람
+                stuffcount.Text = "0";
+                add.Enabled = false;
+                cancle.Enabled = false;
+                stuffcount.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("숫자를 입력하시오", "err");
+            }
+        }
+        private void cancle_Click(object sender, EventArgs e)//(취소)
+        {
+            stuffstr = "";
+            add.Enabled = false;
+            cancle.Enabled = false;
+            stuffcount.Enabled = false;
+        }
+
         private void Num(object sender, EventArgs e)//판매창의 추가 결재 금액 숫자 버튼 이벤트처리기
         {
             Button num = sender as Button;
@@ -55,5 +88,15 @@ namespace WindowsFormsApp1
             form2.Show();
             this.Hide();
         }
+
+        private void Sale_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Tag = this;
+            form3.Show();
+            this.Hide();
+        }
+
+        
     }
 }

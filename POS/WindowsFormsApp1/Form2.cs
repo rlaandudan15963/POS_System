@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,57 +15,91 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        //Sql 서버의 사용자아이디, 비밀번호, 데이터베이스 이름, 서버명
-        public static string uid = "sa";
-        public static string password = "pos15963";
-        public static string database = "POS_Stuff";
-        public static string server = "DESKTOP-CVCKE2N";
         public Form2()
         {
             InitializeComponent();
         }
 
-        private void Form2_Shown(object sender, EventArgs e)
+        private void Form2_Shown(object sender, EventArgs e)//재고 관리 폼이 열릴때 발생할 이벤트 처리기(정확히는 보여질때)
         {
-            string constr = "SERVER=" + server + ";DATABASE=" + database + ";UID=" + uid + ";PASSWORD=" + password + ";";
-            SqlConnection POS_DATABASE = new SqlConnection(constr);
-            try { 
-            POS_DATABASE.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = POS_DATABASE;
-            cmd.CommandText = "SELECT * FROM stuff";
-            cmd.CommandType = CommandType.Text;
-            SqlDataReader reader = cmd.ExecuteReader();
-            listView1.Items.Clear();
-                if (reader.HasRows)
-                {
-                    int i = 0;
-                    while (reader.Read())
-                    {
-                        i = i + 1;
-                        ListViewItem lvt = new ListViewItem();
-                        lvt.SubItems.Add(i.ToString());
-                        lvt.SubItems.Add(reader["stuff"].ToString());
-                        lvt.SubItems.Add(reader.GetString(1));
-                        lvt.SubItems.Add(reader.GetString(2));
-                        lvt.SubItems.Add(reader.GetString(3));
-                        lvt.SubItems.Add(reader.GetString(4));
-                        lvt.SubItems.Add(reader.GetString(4));
-                        listView1.Items.Add(lvt);
-                    }
-                    reader.Close();
-                    listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-                    POS_DATABASE.Close();
-                }
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
 
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            listView1.Columns.Add("바코드", 110);
+            listView1.Columns.Add("상품명", 170);
+            listView1.Columns.Add("제조사", 140);
+            listView1.Columns.Add("가격", 110);
+            listView1.Columns.Add("개수", 90);
+        }
+        private void modie_Click(object sender, EventArgs e)//수정 버튼 이벤트
+        {
+            NameBox.Enabled = true;
+            CompanyBox.Enabled = true;
+            StocBox.Enabled = true;
+            PriceBox.Enabled = true;
+            BarcodeBox.Enabled = true;
+            Add.Enabled = false;
+            Modie.Enabled = false;
+            Delete.Enabled = false;
+            Yes.Enabled = true;
+            No.Enabled = true;
+        }
+        private void Add_Click(object sender, EventArgs e)//추가 버튼 이벤트
+        {
+            NameBox.Enabled = true;
+            CompanyBox.Enabled = true;
+            StocBox.Enabled = true;
+            PriceBox.Enabled = true;
+            BarcodeBox.Enabled = true;
+            Modie.Enabled = false;
+            Add.Enabled = false;
+            Delete.Enabled = false;
+            Yes.Enabled = true;
+            No.Enabled = true;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)//삭제 버튼 이벤트
+        {
+            NameBox.Enabled = true;
+            CompanyBox.Enabled = true;
+            StocBox.Enabled = true;
+            PriceBox.Enabled = true;
+            BarcodeBox.Enabled = true;
+            Add.Enabled = false;
+            Delete.Enabled=false;
+            Modie.Enabled = false;
+            Yes.Enabled = true;
+            No.Enabled = true;
+        }
+
+        private void Yes_Click(object sender, EventArgs e)//확인 버튼 이벤트
+        {
+            NameBox.Enabled = false;
+            CompanyBox.Enabled = false;
+            StocBox.Enabled = false;
+            PriceBox.Enabled = false;
+            BarcodeBox.Enabled = false;
+            Modie.Enabled=true;
+            Add.Enabled = true;
+            Delete.Enabled = true;
+            Yes.Enabled = false;
+            No.Enabled = false;
+        }
+
+        private void No_Click(object sender, EventArgs e)//취소 버튼 이벤트
+        {
+            NameBox.Enabled = false;
+            CompanyBox.Enabled = false;
+            StocBox.Enabled = false;
+            PriceBox.Enabled = false;
+            BarcodeBox.Enabled = false;
+            Modie.Enabled = true;
+            Add.Enabled = true;
+            Delete.Enabled = true;
+            Yes.Enabled = false;
+            No.Enabled = false;
+        }
+        private void SaleStuff_Click(object sender, EventArgs e)//뒤로가기 버튼
         {
             var f1 = (Form1)(this.Tag);
             f1.Show();

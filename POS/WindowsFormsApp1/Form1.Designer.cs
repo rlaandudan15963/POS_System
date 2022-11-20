@@ -71,6 +71,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.stuffcount = new System.Windows.Forms.TextBox();
+            this.add = new System.Windows.Forms.Button();
+            this.cancle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Sale
@@ -81,6 +84,7 @@
             this.Sale.TabIndex = 88;
             this.Sale.Text = "매출";
             this.Sale.UseVisualStyleBackColor = true;
+            this.Sale.Click += new System.EventHandler(this.Sale_Click);
             // 
             // Stock
             // 
@@ -260,6 +264,7 @@
             this.button20.Size = new System.Drawing.Size(71, 66);
             this.button20.TabIndex = 69;
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button19
             // 
@@ -268,6 +273,7 @@
             this.button19.Size = new System.Drawing.Size(71, 66);
             this.button19.TabIndex = 68;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button18
             // 
@@ -276,6 +282,7 @@
             this.button18.Size = new System.Drawing.Size(71, 66);
             this.button18.TabIndex = 67;
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button17
             // 
@@ -284,6 +291,7 @@
             this.button17.Size = new System.Drawing.Size(71, 66);
             this.button17.TabIndex = 66;
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button16
             // 
@@ -292,6 +300,7 @@
             this.button16.Size = new System.Drawing.Size(71, 66);
             this.button16.TabIndex = 65;
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button15
             // 
@@ -300,6 +309,7 @@
             this.button15.Size = new System.Drawing.Size(71, 66);
             this.button15.TabIndex = 64;
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button14
             // 
@@ -308,6 +318,7 @@
             this.button14.Size = new System.Drawing.Size(71, 66);
             this.button14.TabIndex = 63;
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button13
             // 
@@ -316,6 +327,7 @@
             this.button13.Size = new System.Drawing.Size(71, 66);
             this.button13.TabIndex = 62;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button12
             // 
@@ -324,6 +336,7 @@
             this.button12.Size = new System.Drawing.Size(71, 66);
             this.button12.TabIndex = 61;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button11
             // 
@@ -332,6 +345,7 @@
             this.button11.Size = new System.Drawing.Size(71, 66);
             this.button11.TabIndex = 60;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button10
             // 
@@ -340,6 +354,7 @@
             this.button10.Size = new System.Drawing.Size(71, 66);
             this.button10.TabIndex = 59;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button9
             // 
@@ -348,6 +363,7 @@
             this.button9.Size = new System.Drawing.Size(71, 66);
             this.button9.TabIndex = 58;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button8
             // 
@@ -356,6 +372,7 @@
             this.button8.Size = new System.Drawing.Size(71, 66);
             this.button8.TabIndex = 57;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button7
             // 
@@ -364,6 +381,7 @@
             this.button7.Size = new System.Drawing.Size(71, 66);
             this.button7.TabIndex = 56;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button6
             // 
@@ -372,6 +390,7 @@
             this.button6.Size = new System.Drawing.Size(71, 66);
             this.button6.TabIndex = 55;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button5
             // 
@@ -380,6 +399,7 @@
             this.button5.Size = new System.Drawing.Size(71, 66);
             this.button5.TabIndex = 54;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button4
             // 
@@ -388,6 +408,7 @@
             this.button4.Size = new System.Drawing.Size(71, 66);
             this.button4.TabIndex = 53;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button3
             // 
@@ -396,6 +417,7 @@
             this.button3.Size = new System.Drawing.Size(71, 66);
             this.button3.TabIndex = 52;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button2
             // 
@@ -404,6 +426,7 @@
             this.button2.Size = new System.Drawing.Size(71, 66);
             this.button2.TabIndex = 51;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.SaleStuff);
             // 
             // button1
             // 
@@ -412,11 +435,12 @@
             this.button1.Size = new System.Drawing.Size(71, 66);
             this.button1.TabIndex = 50;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SaleStuff);
             // 
             // saletextBox
             // 
             this.saletextBox.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.saletextBox.Location = new System.Drawing.Point(12, 46);
+            this.saletextBox.Location = new System.Drawing.Point(12, 20);
             this.saletextBox.Name = "saletextBox";
             this.saletextBox.Size = new System.Drawing.Size(379, 81);
             this.saletextBox.TabIndex = 89;
@@ -473,11 +497,47 @@
             this.label3.TabIndex = 94;
             this.label3.Text = "개수";
             // 
+            // stuffcount
+            // 
+            this.stuffcount.Enabled = false;
+            this.stuffcount.Font = new System.Drawing.Font("굴림", 16F);
+            this.stuffcount.Location = new System.Drawing.Point(12, 107);
+            this.stuffcount.Name = "stuffcount";
+            this.stuffcount.Size = new System.Drawing.Size(159, 32);
+            this.stuffcount.TabIndex = 95;
+            this.stuffcount.Text = "0";
+            this.stuffcount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // add
+            // 
+            this.add.Enabled = false;
+            this.add.Location = new System.Drawing.Point(186, 107);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(89, 28);
+            this.add.TabIndex = 96;
+            this.add.Text = "등록";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // cancle
+            // 
+            this.cancle.Enabled = false;
+            this.cancle.Location = new System.Drawing.Point(291, 107);
+            this.cancle.Name = "cancle";
+            this.cancle.Size = new System.Drawing.Size(100, 28);
+            this.cancle.TabIndex = 97;
+            this.cancle.Text = "취소";
+            this.cancle.UseVisualStyleBackColor = true;
+            this.cancle.Click += new System.EventHandler(this.cancle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.cancle);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.stuffcount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -573,6 +633,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox stuffcount;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button cancle;
     }
 }
 

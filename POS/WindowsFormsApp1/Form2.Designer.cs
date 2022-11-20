@@ -28,45 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CompanyBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.StocBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PriceBox = new System.Windows.Forms.TextBox();
+            this.Modie = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.Sale = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.BarcodeBox = new System.Windows.Forms.TextBox();
+            this.SearchBar = new System.Windows.Forms.TextBox();
+            this.Search = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Yes = new System.Windows.Forms.Button();
+            this.No = new System.Windows.Forms.Button();
+            this.SaleStuff = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // listView1
+            // NameBox
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 190);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(612, 237);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox1.Location = new System.Drawing.Point(80, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 26);
-            this.textBox1.TabIndex = 1;
+            this.NameBox.Enabled = false;
+            this.NameBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.NameBox.Location = new System.Drawing.Point(80, 26);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(262, 26);
+            this.NameBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -88,14 +78,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "제조사 :";
             // 
-            // textBox2
+            // CompanyBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox2.Location = new System.Drawing.Point(80, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(262, 26);
-            this.textBox2.TabIndex = 3;
+            this.CompanyBox.Enabled = false;
+            this.CompanyBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.CompanyBox.Location = new System.Drawing.Point(80, 70);
+            this.CompanyBox.Name = "CompanyBox";
+            this.CompanyBox.Size = new System.Drawing.Size(262, 26);
+            this.CompanyBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -107,14 +97,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "재고 :";
             // 
-            // textBox3
+            // StocBox
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox3.Location = new System.Drawing.Point(431, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 26);
-            this.textBox3.TabIndex = 5;
+            this.StocBox.Enabled = false;
+            this.StocBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.StocBox.Location = new System.Drawing.Point(431, 29);
+            this.StocBox.Name = "StocBox";
+            this.StocBox.Size = new System.Drawing.Size(147, 26);
+            this.StocBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -126,23 +116,24 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "금액 :";
             // 
-            // textBox4
+            // PriceBox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox4.Location = new System.Drawing.Point(431, 73);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(147, 26);
-            this.textBox4.TabIndex = 7;
+            this.PriceBox.Enabled = false;
+            this.PriceBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.PriceBox.Location = new System.Drawing.Point(431, 73);
+            this.PriceBox.Name = "PriceBox";
+            this.PriceBox.Size = new System.Drawing.Size(147, 26);
+            this.PriceBox.TabIndex = 7;
             // 
-            // button1
+            // Modie
             // 
-            this.button1.Location = new System.Drawing.Point(634, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "수정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Modie.Location = new System.Drawing.Point(634, 32);
+            this.Modie.Name = "Modie";
+            this.Modie.Size = new System.Drawing.Size(75, 23);
+            this.Modie.TabIndex = 9;
+            this.Modie.Text = "수정";
+            this.Modie.UseVisualStyleBackColor = true;
+            this.Modie.Click += new System.EventHandler(this.modie_Click);
             // 
             // label5
             // 
@@ -154,113 +145,118 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "바코드 :";
             // 
-            // textBox5
+            // BarcodeBox
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox5.Location = new System.Drawing.Point(80, 113);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(262, 26);
-            this.textBox5.TabIndex = 10;
+            this.BarcodeBox.Enabled = false;
+            this.BarcodeBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.BarcodeBox.Location = new System.Drawing.Point(80, 113);
+            this.BarcodeBox.Name = "BarcodeBox";
+            this.BarcodeBox.Size = new System.Drawing.Size(262, 26);
+            this.BarcodeBox.TabIndex = 10;
             // 
-            // textBox6
+            // SearchBar
             // 
-            this.textBox6.Font = new System.Drawing.Font("굴림", 12F);
-            this.textBox6.Location = new System.Drawing.Point(12, 158);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(530, 26);
-            this.textBox6.TabIndex = 12;
+            this.SearchBar.Font = new System.Drawing.Font("굴림", 12F);
+            this.SearchBar.Location = new System.Drawing.Point(12, 158);
+            this.SearchBar.Name = "SearchBar";
+            this.SearchBar.Size = new System.Drawing.Size(530, 26);
+            this.SearchBar.TabIndex = 12;
             // 
-            // button2
+            // Search
             // 
-            this.button2.Font = new System.Drawing.Font("굴림", 12F);
-            this.button2.Location = new System.Drawing.Point(556, 161);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "검색";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Search.Font = new System.Drawing.Font("굴림", 12F);
+            this.Search.Location = new System.Drawing.Point(556, 161);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(68, 23);
+            this.Search.TabIndex = 13;
+            this.Search.Text = "검색";
+            this.Search.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Add
             // 
-            this.button3.Location = new System.Drawing.Point(634, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "추가";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Add.Location = new System.Drawing.Point(634, 75);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 14;
+            this.Add.Text = "추가";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // button4
+            // Delete
             // 
-            this.button4.Location = new System.Drawing.Point(634, 115);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "삭제";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Delete.Location = new System.Drawing.Point(634, 115);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(75, 23);
+            this.Delete.TabIndex = 15;
+            this.Delete.Text = "삭제";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // button5
+            // Yes
             // 
-            this.button5.Location = new System.Drawing.Point(729, 54);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "확인";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Yes.Enabled = false;
+            this.Yes.Location = new System.Drawing.Point(729, 54);
+            this.Yes.Name = "Yes";
+            this.Yes.Size = new System.Drawing.Size(75, 23);
+            this.Yes.TabIndex = 16;
+            this.Yes.Text = "확인";
+            this.Yes.UseVisualStyleBackColor = true;
+            this.Yes.Click += new System.EventHandler(this.Yes_Click);
             // 
-            // button6
+            // No
             // 
-            this.button6.Location = new System.Drawing.Point(729, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "취소";
-            this.button6.UseVisualStyleBackColor = true;
+            this.No.Enabled = false;
+            this.No.Location = new System.Drawing.Point(729, 98);
+            this.No.Name = "No";
+            this.No.Size = new System.Drawing.Size(75, 23);
+            this.No.TabIndex = 17;
+            this.No.Text = "취소";
+            this.No.UseVisualStyleBackColor = true;
+            this.No.Click += new System.EventHandler(this.No_Click);
             // 
-            // Sale
+            // SaleStuff
             // 
-            this.Sale.Location = new System.Drawing.Point(647, 344);
-            this.Sale.Name = "Sale";
-            this.Sale.Size = new System.Drawing.Size(157, 28);
-            this.Sale.TabIndex = 89;
-            this.Sale.Text = "매출";
-            this.Sale.UseVisualStyleBackColor = true;
+            this.SaleStuff.Location = new System.Drawing.Point(647, 302);
+            this.SaleStuff.Name = "SaleStuff";
+            this.SaleStuff.Size = new System.Drawing.Size(157, 28);
+            this.SaleStuff.TabIndex = 90;
+            this.SaleStuff.Text = "뒤로가기";
+            this.SaleStuff.UseVisualStyleBackColor = true;
+            this.SaleStuff.Click += new System.EventHandler(this.SaleStuff_Click);
             // 
-            // button7
+            // listView1
             // 
-            this.button7.Location = new System.Drawing.Point(647, 255);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 28);
-            this.button7.TabIndex = 90;
-            this.button7.Text = "뒤로가기";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 190);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(612, 248);
+            this.listView1.TabIndex = 91;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.Sale);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.SaleStuff);
+            this.Controls.Add(this.No);
+            this.Controls.Add(this.Yes);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Add);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.SearchBar);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.BarcodeBox);
+            this.Controls.Add(this.Modie);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.PriceBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.StocBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CompanyBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NameBox);
             this.Name = "Form2";
             this.Text = "POS_Stock";
             this.Shown += new System.EventHandler(this.Form2_Shown);
@@ -270,26 +266,24 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox CompanyBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox StocBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox PriceBox;
+        private System.Windows.Forms.Button Modie;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button Sale;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox BarcodeBox;
+        private System.Windows.Forms.TextBox SearchBar;
+        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Yes;
+        private System.Windows.Forms.Button No;
+        private System.Windows.Forms.Button SaleStuff;
+        private System.Windows.Forms.ListView listView1;
     }
 }
