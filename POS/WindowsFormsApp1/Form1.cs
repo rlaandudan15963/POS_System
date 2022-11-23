@@ -17,6 +17,252 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        public void SetButton(string salename, string price, string count, int number, bool DelOrAdd)//상품 버튼에 상품 할당 메소드, 필요시 인자 추가(부울형은 할당인지, 비할당인지를 표시)
+        {
+            switch (number)
+            {
+                case 1:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button1.Text = salename;
+                        }
+                        else
+                        {
+                            button1.Text = "";
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button2.Text = salename;
+                        }
+                        else
+                        {
+                            button2.Text = "";
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button3.Text = salename;
+                        }
+                        else
+                        {
+                            button3.Text = "";
+                        }
+                        break;
+                    }
+                case 4:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button4.Text = salename;
+                        }
+                        else
+                        {
+                            button4.Text = "";
+                        }
+                        break;
+                    }
+                case 5:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button5.Text = salename;
+                        }
+                        else
+                        {
+                            button5.Text = "";
+                        }
+                        break;
+                    }
+                case 6:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button6.Text = salename;
+                        }
+                        else
+                        {
+                            button6.Text = "";
+                        }
+                        break;
+                    }
+                case 7:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button7.Text = salename;
+                        }
+                        else
+                        {
+                            button7.Text = "";
+                        }
+                        break;
+                    }
+                case 8:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button8.Text = salename;
+                        }
+                        else
+                        {
+                            button8.Text = "";
+                        }
+                        break;
+                    }
+                case 9:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button9.Text = salename;
+                        }
+                        else
+                        {
+                            button9.Text = "";
+                        }
+                        break;
+                    }
+                case 10:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button10.Text = salename;
+                        }
+                        else
+                        {
+                            button10.Text = "";
+                        }
+                        break;
+                    }
+                case 11:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button11.Text = salename;
+                        }
+                        else
+                        {
+                            button11.Text = "";
+                        }
+                        break;
+                    }
+                case 12:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button12.Text = salename;
+                        }
+                        else
+                        {
+                            button12.Text = "";
+                        }
+                        break;
+                    }
+                case 13:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button13.Text = salename;
+                        }
+                        else
+                        {
+                            button13.Text = "";
+                        }
+                        break;
+                    }
+                case 14:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button14.Text = salename;
+                        }
+                        else
+                        {
+                            button14.Text = "";
+                        }
+                        break;
+                    }
+                case 15:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button15.Text = salename;
+                        }
+                        else
+                        {
+                            button15.Text = "";
+                        }
+                        break;
+                    }
+                case 16:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button16.Text = salename;
+                        }
+                        else
+                        {
+                            button16.Text = "";
+                        }
+                        break;
+                    }
+                case 17:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button17.Text = salename;
+                        }
+                        else
+                        {
+                            button17.Text = "";
+                        }
+                        break;
+                    }
+                case 18:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button18.Text = salename;
+                        }
+                        else
+                        {
+                            button18.Text = "";
+                        }
+                        break;
+                    }
+                case 19:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button19.Text = salename;
+                        }
+                        else
+                        {
+                            button19.Text = "";
+                        }
+                        break;
+                    }
+                case 20:
+                    {
+                        if (DelOrAdd)
+                        {
+                            button20.Text = salename;
+                        }
+                        else
+                        {
+                            button20.Text = "";
+                        }
+                        break;
+                    }
+            }
+        }
         private void AddSalePrice(string addnum)//총 결재 금액 창에 금액 추가하는 메소드
         {
             saletextBox.Text = (int.Parse(saletextBox.Text)+int.Parse(addnum)).ToString();
@@ -83,7 +329,7 @@ namespace WindowsFormsApp1
 
         private void Stock_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(this);
             form2.Tag = this;
             form2.Show();
             this.Hide();
@@ -97,6 +343,12 @@ namespace WindowsFormsApp1
             this.Hide();
         }
 
-        
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form2 form2 = new Form2(this);
+            Form3 form3 = new Form3();
+            form2.Close();
+            form3.Close();
+        }
     }
 }

@@ -50,6 +50,12 @@ namespace WindowsFormsApp1
             MonthChart.Show();
         }
 
-        
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var f1 = (Form1)this.Tag;
+            Form2 form2 = new Form2(f1);
+            f1.Close();
+            form2.Close();
+        }
     }
 }
