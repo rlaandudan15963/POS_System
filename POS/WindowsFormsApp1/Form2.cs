@@ -15,9 +15,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        Form1 form1;
+        public Form2(Form1 p)
         {
             InitializeComponent();
+            form1 = p;
         }
 
         private void Form2_Shown(object sender, EventArgs e)//재고 관리 폼이 열릴때 발생할 이벤트 처리기(정확히는 보여질때)
@@ -99,11 +101,37 @@ namespace WindowsFormsApp1
             Yes.Enabled = false;
             No.Enabled = false;
         }
+        private void AddInButton_Click(object sender, EventArgs e)//상품 판매 버튼에 할당하는 이벤트
+        {
+            if(listView1.SelectedIndices.Count != 0)
+            {
+                string name = listView1.Items[listView1.FocusedItem.Index].SubItems[1].ToString();
+                string price = listView1.Items[listView1.FocusedItem.Index].SubItems[3].ToString();
+                string count = listView1.Items[listView1.FocusedItem.Index].SubItems[4].ToString();
+                int number = int.Parse(comboBox1.SelectedItem.ToString());
+                form1.SetButton(name, price, count, number, true);
+            }
+        }
+        private void NotSaleButton_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(comboBox1.SelectedItem.ToString()) > 0)
+            {
+                form1.SetButton("","","", int.Parse(comboBox1.SelectedItem.ToString()), false);
+            }
+        }
         private void SaleStuff_Click(object sender, EventArgs e)//뒤로가기 버튼
         {
             var f1 = (Form1)(this.Tag);
             f1.Show();
             this.Hide();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var f1 = (Form1)this.Tag;
+            Form3 form3 = new Form3();
+            f1.Close();
+            form3.Close();
         }
     }
 }

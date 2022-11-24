@@ -47,6 +47,10 @@
             this.No = new System.Windows.Forms.Button();
             this.SaleStuff = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AddInButton = new System.Windows.Forms.Button();
+            this.NotSaleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameBox
@@ -127,7 +131,7 @@
             // 
             // Modie
             // 
-            this.Modie.Location = new System.Drawing.Point(634, 32);
+            this.Modie.Location = new System.Drawing.Point(634, 12);
             this.Modie.Name = "Modie";
             this.Modie.Size = new System.Drawing.Size(75, 23);
             this.Modie.TabIndex = 9;
@@ -174,7 +178,7 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(634, 75);
+            this.Add.Location = new System.Drawing.Point(634, 55);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(75, 23);
             this.Add.TabIndex = 14;
@@ -184,7 +188,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(634, 115);
+            this.Delete.Location = new System.Drawing.Point(634, 95);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 15;
@@ -216,7 +220,7 @@
             // 
             // SaleStuff
             // 
-            this.SaleStuff.Location = new System.Drawing.Point(647, 302);
+            this.SaleStuff.Location = new System.Drawing.Point(647, 357);
             this.SaleStuff.Name = "SaleStuff";
             this.SaleStuff.Size = new System.Drawing.Size(157, 28);
             this.SaleStuff.TabIndex = 90;
@@ -226,6 +230,7 @@
             // 
             // listView1
             // 
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 190);
             this.listView1.Name = "listView1";
@@ -233,11 +238,75 @@
             this.listView1.TabIndex = 91;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("굴림", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comboBox1.Location = new System.Drawing.Point(712, 197);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(92, 24);
+            this.comboBox1.TabIndex = 92;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 12F);
+            this.label6.Location = new System.Drawing.Point(630, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "상품 번호";
+            // 
+            // AddInButton
+            // 
+            this.AddInButton.Location = new System.Drawing.Point(663, 246);
+            this.AddInButton.Name = "AddInButton";
+            this.AddInButton.Size = new System.Drawing.Size(123, 23);
+            this.AddInButton.TabIndex = 95;
+            this.AddInButton.Text = "상품 버튼에 할당";
+            this.AddInButton.UseVisualStyleBackColor = true;
+            this.AddInButton.Click += new System.EventHandler(this.AddInButton_Click);
+            // 
+            // NotSaleButton
+            // 
+            this.NotSaleButton.Location = new System.Drawing.Point(663, 275);
+            this.NotSaleButton.Name = "NotSaleButton";
+            this.NotSaleButton.Size = new System.Drawing.Size(123, 23);
+            this.NotSaleButton.TabIndex = 93;
+            this.NotSaleButton.Text = "비할당";
+            this.NotSaleButton.UseVisualStyleBackColor = true;
+            this.NotSaleButton.Click += new System.EventHandler(this.NotSaleButton_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.AddInButton);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.NotSaleButton);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.SaleStuff);
             this.Controls.Add(this.No);
@@ -259,6 +328,7 @@
             this.Controls.Add(this.NameBox);
             this.Name = "Form2";
             this.Text = "POS_Stock";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Shown += new System.EventHandler(this.Form2_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,5 +355,9 @@
         private System.Windows.Forms.Button No;
         private System.Windows.Forms.Button SaleStuff;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button AddInButton;
+        private System.Windows.Forms.Button NotSaleButton;
     }
 }
