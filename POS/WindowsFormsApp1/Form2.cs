@@ -15,7 +15,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        string MSsql = "Server=DESKTOP-CVCKE2N; database=POS_Stuff; uid=sa; pwd=pos15963;";
+        int WhatButton;
         Form1 form1;
+
         public Form2(Form1 p)
         {
             InitializeComponent();
@@ -24,15 +27,36 @@ namespace WindowsFormsApp1
 
         private void Form2_Shown(object sender, EventArgs e)//재고 관리 폼이 열릴때 발생할 이벤트 처리기(정확히는 보여질때)
         {
+            SqlDataReader dr;
+            SqlConnection con;
+            con = new SqlConnection(MSsql);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Stuff", con);
+            dr = cmd.ExecuteReader();
             listView1.View = View.Details;
             listView1.FullRowSelect = true;
-
+            listView1.Items.Clear();
             listView1.Columns.Add("바코드", 110);
             listView1.Columns.Add("상품명", 170);
             listView1.Columns.Add("제조사", 140);
             listView1.Columns.Add("가격", 110);
             listView1.Columns.Add("개수", 90);
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    ListViewItem lvt = new ListViewItem(dr["Barcode"].ToString());
+                    lvt.SubItems.Add(dr["Name"].ToString());
+                    lvt.SubItems.Add(dr["Company"].ToString());
+                    lvt.SubItems.Add(dr["Price"].ToString());
+                    lvt.SubItems.Add(dr["Stuff_Count"].ToString());
+                    listView1.Items.Add(lvt);
+                }
+            }
+            dr.Close();
+            con.Close();
         }
+
         private void modie_Click(object sender, EventArgs e)//수정 버튼 이벤트
         {
             NameBox.Enabled = true;
@@ -46,6 +70,7 @@ namespace WindowsFormsApp1
             Yes.Enabled = true;
             No.Enabled = true;
         }
+
         private void Add_Click(object sender, EventArgs e)//추가 버튼 이벤트
         {
             NameBox.Enabled = true;
@@ -58,8 +83,35 @@ namespace WindowsFormsApp1
             Delete.Enabled = false;
             Yes.Enabled = true;
             No.Enabled = true;
+            WhatButton = 2;
         }
-
+        private void AddData(string barcode, string name, string company, string price, string stuffcount)
+        {
+            SqlDataReader dr;
+            SqlConnection con;
+            string addquery = "insert into Stuff values('" + barcode + "', '" + name + "', '" + company + "', '" + price + "', '" + stuffcount + "');";
+            con = new SqlConnection(MSsql);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(addquery, con);
+            cmd.ExecuteNonQuery();
+            cmd = new SqlCommand("select * from Stuff", con);
+            dr = cmd.ExecuteReader();
+            listView1.Items.Clear();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    ListViewItem lvt = new ListViewItem(dr["Barcode"].ToString());
+                    lvt.SubItems.Add(dr["Name"].ToString());
+                    lvt.SubItems.Add(dr["Company"].ToString());
+                    lvt.SubItems.Add(dr["Price"].ToString());
+                    lvt.SubItems.Add(dr["Stuff_Count"].ToString());
+                    listView1.Items.Add(lvt);
+                }
+            }
+            dr.Close();
+            con.Close();
+        }
         private void Delete_Click(object sender, EventArgs e)//삭제 버튼 이벤트
         {
             NameBox.Enabled = true;
@@ -76,6 +128,14 @@ namespace WindowsFormsApp1
 
         private void Yes_Click(object sender, EventArgs e)//확인 버튼 이벤트
         {
+            switch (WhatButton)
+            {
+                case 1:
+                    break;
+                case 2:
+                    AddData(BarcodeBox.Text, NameBox.Text, CompanyBox.Text, PriceBox.Text, StocBox.Text);
+                    break;
+            }
             NameBox.Enabled = false;
             CompanyBox.Enabled = false;
             StocBox.Enabled = false;
