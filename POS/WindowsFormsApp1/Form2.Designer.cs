@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.AddInButton = new System.Windows.Forms.Button();
             this.NotSaleButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NameBox
@@ -131,6 +132,7 @@
             // 
             // Modie
             // 
+            this.Modie.Enabled = false;
             this.Modie.Location = new System.Drawing.Point(634, 12);
             this.Modie.Name = "Modie";
             this.Modie.Size = new System.Drawing.Size(75, 23);
@@ -161,9 +163,9 @@
             // SearchBar
             // 
             this.SearchBar.Font = new System.Drawing.Font("굴림", 12F);
-            this.SearchBar.Location = new System.Drawing.Point(12, 158);
+            this.SearchBar.Location = new System.Drawing.Point(107, 158);
             this.SearchBar.Name = "SearchBar";
-            this.SearchBar.Size = new System.Drawing.Size(530, 26);
+            this.SearchBar.Size = new System.Drawing.Size(435, 26);
             this.SearchBar.TabIndex = 12;
             // 
             // Search
@@ -175,6 +177,7 @@
             this.Search.TabIndex = 13;
             this.Search.Text = "검색";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Add
             // 
@@ -188,6 +191,7 @@
             // 
             // Delete
             // 
+            this.Delete.Enabled = false;
             this.Delete.Location = new System.Drawing.Point(634, 95);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
@@ -237,6 +241,7 @@
             this.listView1.Size = new System.Drawing.Size(612, 248);
             this.listView1.TabIndex = 91;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // comboBox1
             // 
@@ -298,11 +303,22 @@
             this.NotSaleButton.UseVisualStyleBackColor = true;
             this.NotSaleButton.Click += new System.EventHandler(this.NotSaleButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 12F);
+            this.label7.Location = new System.Drawing.Point(9, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 16);
+            this.label7.TabIndex = 96;
+            this.label7.Text = "바코드 검색";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.AddInButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.NotSaleButton);
@@ -359,5 +375,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button AddInButton;
         private System.Windows.Forms.Button NotSaleButton;
+        private System.Windows.Forms.Label label7;
     }
 }
