@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        string Conn = "Server=localhost;Database=pos;Uid=root;Pwd=****;";
+        string Conn = "Server=localhost;Database=pos;Uid=root;Pwd=1234;";
         string stuffstr;//상품명 임시 저장할 변수
 
         public Form1()
