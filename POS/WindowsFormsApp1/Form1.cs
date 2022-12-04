@@ -349,5 +349,17 @@ namespace WindowsFormsApp1
                 Barcode.Text = "";
             }            
         }
+
+        private void Payment_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("계산되었습니다.");
+            pricelistBox.Clear();
+            saletextBox.Clear();
+            for (int i = 1; i < 16; i++)
+                SetButton("", "", "", i, true);
+
+            //재고 정보 갱신
+            //...
+        }
     }
 }
