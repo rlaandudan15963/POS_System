@@ -1,18 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        string Conn = "Server=localhost;Database=pos;Uid=root;Pwd=****;";
         string stuffstr;//상품명 임시 저장할 변수
+
         public Form1()
         {
             InitializeComponent();
@@ -205,62 +210,15 @@ namespace WindowsFormsApp1
                     {
                         if (DelOrAdd)
                         {
-                            button16.Text = salename;
+                            input.Text = salename;
                         }
                         else
                         {
-                            button16.Text = "";
+                            input.Text = "";
                         }
                         break;
                     }
-                case 17:
-                    {
-                        if (DelOrAdd)
-                        {
-                            button17.Text = salename;
-                        }
-                        else
-                        {
-                            button17.Text = "";
-                        }
-                        break;
-                    }
-                case 18:
-                    {
-                        if (DelOrAdd)
-                        {
-                            button18.Text = salename;
-                        }
-                        else
-                        {
-                            button18.Text = "";
-                        }
-                        break;
-                    }
-                case 19:
-                    {
-                        if (DelOrAdd)
-                        {
-                            button19.Text = salename;
-                        }
-                        else
-                        {
-                            button19.Text = "";
-                        }
-                        break;
-                    }
-                case 20:
-                    {
-                        if (DelOrAdd)
-                        {
-                            button20.Text = salename;
-                        }
-                        else
-                        {
-                            button20.Text = "";
-                        }
-                        break;
-                    }
+                
             }
         }
         private void AddSalePrice(string addnum)//총 결재 금액 창에 금액 추가하는 메소드
@@ -279,7 +237,7 @@ namespace WindowsFormsApp1
         {
             if (int.TryParse(stuffcount.Text, out _))
             {
-                pricelistBox.Items.Add($"{stuffstr}\t\t[가격데이터]\t\t{stuffcount.Text}");//판매대기 리스트박스에 저장
+                pricelistBox.Items[0].SubItems[3].Text = stuffcount.Text;//판매대기 리스트박스에 저장             
                 //AddSalePrice(가격데이터); //인자로 넘겨주길 바람
                 stuffcount.Text = "0";
                 add.Enabled = false;
@@ -311,14 +269,22 @@ namespace WindowsFormsApp1
         }
         private void Addbutton_Click(object sender, EventArgs e)//판매창의 추가 결재 금액 등록 버튼 이벤트처리기
         {
+            ListViewItem item = new ListViewItem();
             if (addpricetextBox.Text == "0") return;
             AddSalePrice(addpricetextBox.Text);
-            pricelistBox.Items.Add("추가금액\t\t\t" + addpricetextBox.Text);//결재할 상품 목록 리스트박스 = pricelistBox
+            item.SubItems.Add("추가금액");
+            item.SubItems.Add(addpricetextBox.Text);
+            item.SubItems.Add("");
+            pricelistBox.Items.Add(item);
             addpricetextBox.Text = "0";
         }
         private void DeletePrice_Click(object sender, EventArgs e)
         {
-            if (pricelistBox.SelectedIndex > -1) pricelistBox.Items.RemoveAt(pricelistBox.SelectedIndex);
+            if (pricelistBox.SelectedItems.Count > 0)
+            {
+                int index = pricelistBox.FocusedItem.Index;
+                pricelistBox.Items.RemoveAt(index);
+            }
         }
 
         private void CancelSale_Click(object sender, EventArgs e)
@@ -349,6 +315,39 @@ namespace WindowsFormsApp1
             Form3 form3 = new Form3();
             form2.Close();
             form3.Close();
+        }
+
+        private void input_Click(object sender, EventArgs e)
+        {
+            if(Barcode.Text != "")
+            {
+                string barcode = Barcode.Text;               
+             
+                using (MySqlConnection conn = new MySqlConnection(Conn))
+                {
+                    DataSet ds = new DataSet();
+                    string sql = " select * from stuff where barcode='" + barcode + "'";
+                    MySqlDataAdapter adpt = new MySqlDataAdapter(sql, conn);
+                    adpt.Fill(ds, "stuff");
+
+                    string name = ds.Tables[0].Rows[0]["name"].ToString();
+                    string price = ds.Tables[0].Rows[0]["price"].ToString();
+
+                    ListViewItem lvi = new ListViewItem();
+                    lvi.SubItems.Add(name);
+                    lvi.SubItems.Add(price);
+                    lvi.SubItems.Add("1");
+                    //pricelistBox.Items[i],SubItems[3].Text
+                    pricelistBox.Items.Add(lvi);
+                    SetButton(name, price, "1", 1, true);
+                    AddSalePrice(price);
+                              
+                    for (int i = 0; i < pricelistBox.Items.Count; i++)                                       
+                          SetButton(pricelistBox.Items[i].SubItems[1].Text,
+                              price, "1", i + 1, true);                                                                                      
+                }
+                Barcode.Text = "";
+            }            
         }
     }
 }
