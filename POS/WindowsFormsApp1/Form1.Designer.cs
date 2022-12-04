@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Sale = new System.Windows.Forms.Button();
             this.Stock = new System.Windows.Forms.Button();
             this.CancelSale = new System.Windows.Forms.Button();
@@ -44,12 +45,6 @@
             this.Num3 = new System.Windows.Forms.Button();
             this.Num2 = new System.Windows.Forms.Button();
             this.Num1 = new System.Windows.Forms.Button();
-            this.pricelistBox = new System.Windows.Forms.ListBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -60,20 +55,25 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.saletextBox = new System.Windows.Forms.TextBox();
             this.addpricetextBox = new System.Windows.Forms.TextBox();
             this.DeletePrice = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.stuffcount = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.cancle = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.input = new System.Windows.Forms.Button();
+            this.Barcode = new System.Windows.Forms.TextBox();
+            this.pricelistBox = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // Sale
@@ -247,64 +247,9 @@
             this.Num1.UseVisualStyleBackColor = true;
             this.Num1.Click += new System.EventHandler(this.Num);
             // 
-            // pricelistBox
-            // 
-            this.pricelistBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pricelistBox.FormattingEnabled = true;
-            this.pricelistBox.ItemHeight = 16;
-            this.pricelistBox.Location = new System.Drawing.Point(406, 36);
-            this.pricelistBox.Name = "pricelistBox";
-            this.pricelistBox.Size = new System.Drawing.Size(405, 132);
-            this.pricelistBox.TabIndex = 71;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(320, 361);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(71, 66);
-            this.button20.TabIndex = 69;
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(243, 361);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(71, 66);
-            this.button19.TabIndex = 68;
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(166, 361);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(71, 66);
-            this.button18.TabIndex = 67;
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(89, 361);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(71, 66);
-            this.button17.TabIndex = 66;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(12, 361);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(71, 66);
-            this.button16.TabIndex = 65;
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.SaleStuff);
-            // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(320, 289);
+            this.button15.Location = new System.Drawing.Point(320, 361);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(71, 66);
             this.button15.TabIndex = 64;
@@ -313,7 +258,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(243, 289);
+            this.button14.Location = new System.Drawing.Point(243, 361);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(71, 66);
             this.button14.TabIndex = 63;
@@ -322,7 +267,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(166, 289);
+            this.button13.Location = new System.Drawing.Point(166, 361);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(71, 66);
             this.button13.TabIndex = 62;
@@ -331,7 +276,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(89, 289);
+            this.button12.Location = new System.Drawing.Point(89, 361);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(71, 66);
             this.button12.TabIndex = 61;
@@ -340,7 +285,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(12, 289);
+            this.button11.Location = new System.Drawing.Point(12, 361);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(71, 66);
             this.button11.TabIndex = 60;
@@ -349,7 +294,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(320, 217);
+            this.button10.Location = new System.Drawing.Point(320, 289);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(71, 66);
             this.button10.TabIndex = 59;
@@ -358,7 +303,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(243, 217);
+            this.button9.Location = new System.Drawing.Point(243, 289);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(71, 66);
             this.button9.TabIndex = 58;
@@ -367,7 +312,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(166, 217);
+            this.button8.Location = new System.Drawing.Point(166, 289);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(71, 66);
             this.button8.TabIndex = 57;
@@ -376,7 +321,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(89, 217);
+            this.button7.Location = new System.Drawing.Point(89, 289);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(71, 66);
             this.button7.TabIndex = 56;
@@ -385,57 +330,12 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 217);
+            this.button6.Location = new System.Drawing.Point(12, 289);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(71, 66);
             this.button6.TabIndex = 55;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(320, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 66);
-            this.button5.TabIndex = 54;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(243, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 66);
-            this.button4.TabIndex = 53;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(166, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 66);
-            this.button3.TabIndex = 52;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(89, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 66);
-            this.button2.TabIndex = 51;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.SaleStuff);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 66);
-            this.button1.TabIndex = 50;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SaleStuff);
             // 
             // saletextBox
             // 
@@ -467,41 +367,11 @@
             this.DeletePrice.UseVisualStyleBackColor = true;
             this.DeletePrice.Click += new System.EventHandler(this.DeletePrice_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 14F);
-            this.label1.Location = new System.Drawing.Point(404, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 19);
-            this.label1.TabIndex = 92;
-            this.label1.Text = "상품명";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 14F);
-            this.label2.Location = new System.Drawing.Point(619, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 19);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "가격";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 14F);
-            this.label3.Location = new System.Drawing.Point(764, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "개수";
-            // 
             // stuffcount
             // 
             this.stuffcount.Enabled = false;
             this.stuffcount.Font = new System.Drawing.Font("굴림", 16F);
-            this.stuffcount.Location = new System.Drawing.Point(12, 107);
+            this.stuffcount.Location = new System.Drawing.Point(12, 179);
             this.stuffcount.Name = "stuffcount";
             this.stuffcount.Size = new System.Drawing.Size(159, 32);
             this.stuffcount.TabIndex = 95;
@@ -511,7 +381,7 @@
             // add
             // 
             this.add.Enabled = false;
-            this.add.Location = new System.Drawing.Point(186, 107);
+            this.add.Location = new System.Drawing.Point(186, 179);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(89, 28);
             this.add.TabIndex = 96;
@@ -522,7 +392,7 @@
             // cancle
             // 
             this.cancle.Enabled = false;
-            this.cancle.Location = new System.Drawing.Point(291, 107);
+            this.cancle.Location = new System.Drawing.Point(291, 179);
             this.cancle.Name = "cancle";
             this.cancle.Size = new System.Drawing.Size(100, 28);
             this.cancle.TabIndex = 97;
@@ -530,17 +400,123 @@
             this.cancle.UseVisualStyleBackColor = true;
             this.cancle.Click += new System.EventHandler(this.cancle_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 66);
+            this.button1.TabIndex = 50;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SaleStuff);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(89, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 66);
+            this.button2.TabIndex = 51;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.SaleStuff);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(166, 217);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 66);
+            this.button3.TabIndex = 52;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.SaleStuff);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(243, 217);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 66);
+            this.button4.TabIndex = 53;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.SaleStuff);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(320, 217);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 66);
+            this.button5.TabIndex = 54;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.SaleStuff);
+            // 
+            // input
+            // 
+            this.input.Location = new System.Drawing.Point(281, 117);
+            this.input.Name = "input";
+            this.input.Size = new System.Drawing.Size(110, 42);
+            this.input.TabIndex = 103;
+            this.input.Text = "입력";
+            this.input.UseVisualStyleBackColor = true;
+            this.input.Click += new System.EventHandler(this.input_Click);
+            // 
+            // Barcode
+            // 
+            this.Barcode.Font = new System.Drawing.Font("굴림", 20F);
+            this.Barcode.Location = new System.Drawing.Point(12, 117);
+            this.Barcode.Multiline = true;
+            this.Barcode.Name = "Barcode";
+            this.Barcode.Size = new System.Drawing.Size(263, 42);
+            this.Barcode.TabIndex = 102;
+            this.Barcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // pricelistBox
+            // 
+            this.pricelistBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.pricelistBox.FullRowSelect = true;
+            this.pricelistBox.HideSelection = false;
+            this.pricelistBox.Location = new System.Drawing.Point(412, 20);
+            this.pricelistBox.Name = "pricelistBox";
+            this.pricelistBox.Size = new System.Drawing.Size(403, 139);
+            this.pricelistBox.TabIndex = 104;
+            this.pricelistBox.UseCompatibleStateImageBehavior = false;
+            this.pricelistBox.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 0;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "상품명";
+            this.columnHeader2.Width = 260;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "가격";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "개수";
+            this.columnHeader4.Width = 40;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.pricelistBox);
+            this.Controls.Add(this.input);
+            this.Controls.Add(this.Barcode);
             this.Controls.Add(this.cancle);
             this.Controls.Add(this.add);
             this.Controls.Add(this.stuffcount);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.DeletePrice);
             this.Controls.Add(this.addpricetextBox);
             this.Controls.Add(this.saletextBox);
@@ -560,12 +536,6 @@
             this.Controls.Add(this.Num3);
             this.Controls.Add(this.Num2);
             this.Controls.Add(this.Num1);
-            this.Controls.Add(this.pricelistBox);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
@@ -607,12 +577,6 @@
         private System.Windows.Forms.Button Num3;
         private System.Windows.Forms.Button Num2;
         private System.Windows.Forms.Button Num1;
-        private System.Windows.Forms.ListBox pricelistBox;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
@@ -623,20 +587,25 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox saletextBox;
         private System.Windows.Forms.TextBox addpricetextBox;
         private System.Windows.Forms.Button DeletePrice;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox stuffcount;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button cancle;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button input;
+        private System.Windows.Forms.TextBox Barcode;
+        private System.Windows.Forms.ListView pricelistBox;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
