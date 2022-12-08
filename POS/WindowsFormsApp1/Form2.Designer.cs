@@ -245,6 +245,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("굴림", 12F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -262,12 +264,7 @@
             "12",
             "13",
             "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
+            "15"});
             this.comboBox1.Location = new System.Drawing.Point(712, 197);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 24);
@@ -285,6 +282,7 @@
             // 
             // AddInButton
             // 
+            this.AddInButton.Enabled = false;
             this.AddInButton.Location = new System.Drawing.Point(663, 246);
             this.AddInButton.Name = "AddInButton";
             this.AddInButton.Size = new System.Drawing.Size(123, 23);
@@ -295,6 +293,7 @@
             // 
             // NotSaleButton
             // 
+            this.NotSaleButton.Enabled = false;
             this.NotSaleButton.Location = new System.Drawing.Point(663, 275);
             this.NotSaleButton.Name = "NotSaleButton";
             this.NotSaleButton.Size = new System.Drawing.Size(123, 23);
