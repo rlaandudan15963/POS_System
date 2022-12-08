@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
             this.Payment.TabIndex = 85;
             this.Payment.Text = "결재";
             this.Payment.UseVisualStyleBackColor = true;
+            this.Payment.Click += new System.EventHandler(this.Payment_Click_1);
             // 
             // Addbutton
             // 
@@ -483,7 +484,7 @@ namespace WindowsFormsApp1
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "";
+            this.columnHeader1.Text = "바코드";
             this.columnHeader1.Width = 0;
             // 
             // columnHeader2

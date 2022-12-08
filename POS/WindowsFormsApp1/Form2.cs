@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
             Delete.Enabled = false;
             Yes.Enabled = true;
             No.Enabled = true;
+            AddInButton.Enabled = NotSaleButton.Enabled = comboBox1.Enabled = false;
             where = BarcodeBox.Text;
             WhatButton = 1;
         }
@@ -115,6 +116,7 @@ namespace WindowsFormsApp1
             Delete.Enabled = false;
             Yes.Enabled = true;
             No.Enabled = true;
+            AddInButton.Enabled = NotSaleButton.Enabled = comboBox1.Enabled = false;
             BarcodeBox.Text = NameBox.Text = CompanyBox.Text = StocBox.Text = PriceBox.Text = "";
             WhatButton = 2;
         }
@@ -152,11 +154,13 @@ namespace WindowsFormsApp1
             Modie.Enabled = false;
             Yes.Enabled = true;
             No.Enabled = true;
+            AddInButton.Enabled = NotSaleButton.Enabled = comboBox1.Enabled = false;
             WhatButton = 3;
             where = BarcodeBox.Text;
         }
         private void DeleteData(string key)
         {
+            
             SqlDataReader dr;
             SqlConnection con;
             string Delquery = "DELETE FROM Stuff WHERE Barcode = " + key + ";";
@@ -250,12 +254,13 @@ namespace WindowsFormsApp1
         {
             if(listView1.SelectedIndices.Count != 0)
             {
-                string barcode = listView1.Items[listView1.FocusedItem.Index].SubItems[0].ToString();
-                string name = listView1.Items[listView1.FocusedItem.Index].SubItems[1].ToString();
-                string price = listView1.Items[listView1.FocusedItem.Index].SubItems[3].ToString();
-                string count = listView1.Items[listView1.FocusedItem.Index].SubItems[4].ToString();
+                string barcode = BarcodeBox.Text;
+                string name = NameBox.Text;
+                string price = PriceBox.Text;
+                string count = StocBox.Text;
                 int number = int.Parse(comboBox1.SelectedItem.ToString());
                 form1.SetButton(barcode, name, price, count, number, true);
+                MessageBox.Show(number.ToString() + "번 상품버튼에 " + name + "이(가) 할당되었습니다.", "버튼적용");
             }
         }
         private void NotSaleButton_Click(object sender, EventArgs e)
@@ -263,6 +268,7 @@ namespace WindowsFormsApp1
             if (int.Parse(comboBox1.SelectedItem.ToString()) > 0)
             {
                 form1.SetButton("","","","", int.Parse(comboBox1.SelectedItem.ToString()), false);
+                MessageBox.Show(comboBox1.SelectedItem.ToString() + "번 상품버튼이 초기화되었습니다.", "버튼적용");
             }
         }
         private void SaleStuff_Click(object sender, EventArgs e)//뒤로가기 버튼
@@ -284,6 +290,7 @@ namespace WindowsFormsApp1
         {
             Modie.Enabled = true;
             Delete.Enabled = true;
+            AddInButton.Enabled = NotSaleButton.Enabled = comboBox1.Enabled = true;
             if(listView1.SelectedItems.Count == 1)
             {
                 ListView.SelectedListViewItemCollection items = listView1.SelectedItems;
@@ -369,6 +376,7 @@ namespace WindowsFormsApp1
                         listView1.Items.Add(lvt);
                     }
                 }
+                if(listView1.Items.Count == 0) MessageBox.Show("검색하시려는 상품이 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dr.Close();
                 con.Close();
             }
