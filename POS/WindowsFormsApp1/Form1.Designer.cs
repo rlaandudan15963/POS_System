@@ -45,27 +45,27 @@ namespace WindowsFormsApp1
             this.Num3 = new System.Windows.Forms.Button();
             this.Num2 = new System.Windows.Forms.Button();
             this.Num1 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.b15 = new System.Windows.Forms.Button();
+            this.b14 = new System.Windows.Forms.Button();
+            this.b13 = new System.Windows.Forms.Button();
+            this.b12 = new System.Windows.Forms.Button();
+            this.b11 = new System.Windows.Forms.Button();
+            this.b10 = new System.Windows.Forms.Button();
+            this.b9 = new System.Windows.Forms.Button();
+            this.b8 = new System.Windows.Forms.Button();
+            this.b7 = new System.Windows.Forms.Button();
+            this.b6 = new System.Windows.Forms.Button();
             this.saletextBox = new System.Windows.Forms.TextBox();
             this.addpricetextBox = new System.Windows.Forms.TextBox();
             this.DeletePrice = new System.Windows.Forms.Button();
             this.stuffcount = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.cancle = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.b1 = new System.Windows.Forms.Button();
+            this.b2 = new System.Windows.Forms.Button();
+            this.b3 = new System.Windows.Forms.Button();
+            this.b4 = new System.Windows.Forms.Button();
+            this.b5 = new System.Windows.Forms.Button();
             this.input = new System.Windows.Forms.Button();
             this.Barcode = new System.Windows.Forms.TextBox();
             this.pricelistBox = new System.Windows.Forms.ListView();
@@ -247,95 +247,95 @@ namespace WindowsFormsApp1
             this.Num1.UseVisualStyleBackColor = true;
             this.Num1.Click += new System.EventHandler(this.Num);
             // 
-            // button15
+            // b15
             // 
-            this.button15.Location = new System.Drawing.Point(320, 361);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(71, 66);
-            this.button15.TabIndex = 64;
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.SaleStuff);
+            this.b15.Location = new System.Drawing.Point(320, 361);
+            this.b15.Name = "b15";
+            this.b15.Size = new System.Drawing.Size(71, 66);
+            this.b15.TabIndex = 64;
+            this.b15.UseVisualStyleBackColor = true;
+            this.b15.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button14
+            // b14
             // 
-            this.button14.Location = new System.Drawing.Point(243, 361);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(71, 66);
-            this.button14.TabIndex = 63;
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.SaleStuff);
+            this.b14.Location = new System.Drawing.Point(243, 361);
+            this.b14.Name = "b14";
+            this.b14.Size = new System.Drawing.Size(71, 66);
+            this.b14.TabIndex = 63;
+            this.b14.UseVisualStyleBackColor = true;
+            this.b14.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button13
+            // b13
             // 
-            this.button13.Location = new System.Drawing.Point(166, 361);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(71, 66);
-            this.button13.TabIndex = 62;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.SaleStuff);
+            this.b13.Location = new System.Drawing.Point(166, 361);
+            this.b13.Name = "b13";
+            this.b13.Size = new System.Drawing.Size(71, 66);
+            this.b13.TabIndex = 62;
+            this.b13.UseVisualStyleBackColor = true;
+            this.b13.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button12
+            // b12
             // 
-            this.button12.Location = new System.Drawing.Point(89, 361);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(71, 66);
-            this.button12.TabIndex = 61;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.SaleStuff);
+            this.b12.Location = new System.Drawing.Point(89, 361);
+            this.b12.Name = "b12";
+            this.b12.Size = new System.Drawing.Size(71, 66);
+            this.b12.TabIndex = 61;
+            this.b12.UseVisualStyleBackColor = true;
+            this.b12.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button11
+            // b11
             // 
-            this.button11.Location = new System.Drawing.Point(12, 361);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(71, 66);
-            this.button11.TabIndex = 60;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.SaleStuff);
+            this.b11.Location = new System.Drawing.Point(12, 361);
+            this.b11.Name = "b11";
+            this.b11.Size = new System.Drawing.Size(71, 66);
+            this.b11.TabIndex = 60;
+            this.b11.UseVisualStyleBackColor = true;
+            this.b11.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button10
+            // b10
             // 
-            this.button10.Location = new System.Drawing.Point(320, 289);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(71, 66);
-            this.button10.TabIndex = 59;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.SaleStuff);
+            this.b10.Location = new System.Drawing.Point(320, 289);
+            this.b10.Name = "b10";
+            this.b10.Size = new System.Drawing.Size(71, 66);
+            this.b10.TabIndex = 59;
+            this.b10.UseVisualStyleBackColor = true;
+            this.b10.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button9
+            // b9
             // 
-            this.button9.Location = new System.Drawing.Point(243, 289);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(71, 66);
-            this.button9.TabIndex = 58;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.SaleStuff);
+            this.b9.Location = new System.Drawing.Point(243, 289);
+            this.b9.Name = "b9";
+            this.b9.Size = new System.Drawing.Size(71, 66);
+            this.b9.TabIndex = 58;
+            this.b9.UseVisualStyleBackColor = true;
+            this.b9.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button8
+            // b8
             // 
-            this.button8.Location = new System.Drawing.Point(166, 289);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(71, 66);
-            this.button8.TabIndex = 57;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.SaleStuff);
+            this.b8.Location = new System.Drawing.Point(166, 289);
+            this.b8.Name = "b8";
+            this.b8.Size = new System.Drawing.Size(71, 66);
+            this.b8.TabIndex = 57;
+            this.b8.UseVisualStyleBackColor = true;
+            this.b8.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button7
+            // b7
             // 
-            this.button7.Location = new System.Drawing.Point(89, 289);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(71, 66);
-            this.button7.TabIndex = 56;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.SaleStuff);
+            this.b7.Location = new System.Drawing.Point(89, 289);
+            this.b7.Name = "b7";
+            this.b7.Size = new System.Drawing.Size(71, 66);
+            this.b7.TabIndex = 56;
+            this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button6
+            // b6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 289);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(71, 66);
-            this.button6.TabIndex = 55;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.SaleStuff);
+            this.b6.Location = new System.Drawing.Point(12, 289);
+            this.b6.Name = "b6";
+            this.b6.Size = new System.Drawing.Size(71, 66);
+            this.b6.TabIndex = 55;
+            this.b6.UseVisualStyleBackColor = true;
+            this.b6.Click += new System.EventHandler(this.SaleStuff);
             // 
             // saletextBox
             // 
@@ -400,50 +400,50 @@ namespace WindowsFormsApp1
             this.cancle.UseVisualStyleBackColor = true;
             this.cancle.Click += new System.EventHandler(this.cancle_Click);
             // 
-            // button1
+            // b1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 66);
-            this.button1.TabIndex = 50;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SaleStuff);
+            this.b1.Location = new System.Drawing.Point(12, 217);
+            this.b1.Name = "b1";
+            this.b1.Size = new System.Drawing.Size(71, 66);
+            this.b1.TabIndex = 50;
+            this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button2
+            // b2
             // 
-            this.button2.Location = new System.Drawing.Point(89, 217);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 66);
-            this.button2.TabIndex = 51;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.SaleStuff);
+            this.b2.Location = new System.Drawing.Point(89, 217);
+            this.b2.Name = "b2";
+            this.b2.Size = new System.Drawing.Size(71, 66);
+            this.b2.TabIndex = 51;
+            this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button3
+            // b3
             // 
-            this.button3.Location = new System.Drawing.Point(166, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 66);
-            this.button3.TabIndex = 52;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.SaleStuff);
+            this.b3.Location = new System.Drawing.Point(166, 217);
+            this.b3.Name = "b3";
+            this.b3.Size = new System.Drawing.Size(71, 66);
+            this.b3.TabIndex = 52;
+            this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button4
+            // b4
             // 
-            this.button4.Location = new System.Drawing.Point(243, 217);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 66);
-            this.button4.TabIndex = 53;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.SaleStuff);
+            this.b4.Location = new System.Drawing.Point(243, 217);
+            this.b4.Name = "b4";
+            this.b4.Size = new System.Drawing.Size(71, 66);
+            this.b4.TabIndex = 53;
+            this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.SaleStuff);
             // 
-            // button5
+            // b5
             // 
-            this.button5.Location = new System.Drawing.Point(320, 217);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 66);
-            this.button5.TabIndex = 54;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.SaleStuff);
+            this.b5.Location = new System.Drawing.Point(320, 217);
+            this.b5.Name = "b5";
+            this.b5.Size = new System.Drawing.Size(71, 66);
+            this.b5.TabIndex = 54;
+            this.b5.UseVisualStyleBackColor = true;
+            this.b5.Click += new System.EventHandler(this.SaleStuff);
             // 
             // input
             // 
@@ -536,21 +536,21 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Num3);
             this.Controls.Add(this.Num2);
             this.Controls.Add(this.Num1);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.b15);
+            this.Controls.Add(this.b14);
+            this.Controls.Add(this.b13);
+            this.Controls.Add(this.b12);
+            this.Controls.Add(this.b11);
+            this.Controls.Add(this.b10);
+            this.Controls.Add(this.b9);
+            this.Controls.Add(this.b8);
+            this.Controls.Add(this.b7);
+            this.Controls.Add(this.b6);
+            this.Controls.Add(this.b5);
+            this.Controls.Add(this.b4);
+            this.Controls.Add(this.b3);
+            this.Controls.Add(this.b2);
+            this.Controls.Add(this.b1);
             this.Name = "Form1";
             this.Text = "POS_Sale";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -577,27 +577,27 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Num3;
         private System.Windows.Forms.Button Num2;
         private System.Windows.Forms.Button Num1;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button b15;
+        private System.Windows.Forms.Button b14;
+        private System.Windows.Forms.Button b13;
+        private System.Windows.Forms.Button b12;
+        private System.Windows.Forms.Button b11;
+        private System.Windows.Forms.Button b10;
+        private System.Windows.Forms.Button b9;
+        private System.Windows.Forms.Button b8;
+        private System.Windows.Forms.Button b7;
+        private System.Windows.Forms.Button b6;
         private System.Windows.Forms.TextBox saletextBox;
         private System.Windows.Forms.TextBox addpricetextBox;
         private System.Windows.Forms.Button DeletePrice;
         private System.Windows.Forms.TextBox stuffcount;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button cancle;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button b1;
+        private System.Windows.Forms.Button b2;
+        private System.Windows.Forms.Button b3;
+        private System.Windows.Forms.Button b4;
+        private System.Windows.Forms.Button b5;
         private System.Windows.Forms.Button input;
         private System.Windows.Forms.TextBox Barcode;
         private System.Windows.Forms.ListView pricelistBox;

@@ -250,18 +250,19 @@ namespace WindowsFormsApp1
         {
             if(listView1.SelectedIndices.Count != 0)
             {
+                string barcode = listView1.Items[listView1.FocusedItem.Index].SubItems[0].ToString();
                 string name = listView1.Items[listView1.FocusedItem.Index].SubItems[1].ToString();
                 string price = listView1.Items[listView1.FocusedItem.Index].SubItems[3].ToString();
                 string count = listView1.Items[listView1.FocusedItem.Index].SubItems[4].ToString();
                 int number = int.Parse(comboBox1.SelectedItem.ToString());
-                form1.SetButton(name, price, count, number, true);
+                form1.SetButton(barcode, name, price, count, number, true);
             }
         }
         private void NotSaleButton_Click(object sender, EventArgs e)
         {
             if (int.Parse(comboBox1.SelectedItem.ToString()) > 0)
             {
-                form1.SetButton("","","", int.Parse(comboBox1.SelectedItem.ToString()), false);
+                form1.SetButton("","","","", int.Parse(comboBox1.SelectedItem.ToString()), false);
             }
         }
         private void SaleStuff_Click(object sender, EventArgs e)//뒤로가기 버튼
