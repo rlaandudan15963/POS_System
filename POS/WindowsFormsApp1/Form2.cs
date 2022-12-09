@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        string MSsql = "Server=DESKTOP-CVCKE2N; database=POS_Stuff; uid=sa; pwd=pos15963;";
+        string MSsql = "Server=192.168.0.2; database=POS_Stuff; uid=sa; pwd=pos15963;";
         int WhatButton;
         string where;
         Form1 form1;

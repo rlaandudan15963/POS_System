@@ -34,9 +34,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SaleStuff = new System.Windows.Forms.Button();
             this.DayChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,14 +43,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DaySales = new System.Windows.Forms.Button();
-            this.WeekSale = new System.Windows.Forms.Button();
             this.MonthSale = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.WeekChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.MonthChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.DayChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WeekChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +139,7 @@
             // 
             // DaySales
             // 
-            this.DaySales.Location = new System.Drawing.Point(52, 301);
+            this.DaySales.Location = new System.Drawing.Point(52, 314);
             this.DaySales.Name = "DaySales";
             this.DaySales.Size = new System.Drawing.Size(157, 28);
             this.DaySales.TabIndex = 118;
@@ -153,19 +147,9 @@
             this.DaySales.UseVisualStyleBackColor = true;
             this.DaySales.Click += new System.EventHandler(this.DaySales_Click);
             // 
-            // WeekSale
-            // 
-            this.WeekSale.Location = new System.Drawing.Point(52, 339);
-            this.WeekSale.Name = "WeekSale";
-            this.WeekSale.Size = new System.Drawing.Size(157, 28);
-            this.WeekSale.TabIndex = 119;
-            this.WeekSale.Text = "주 매출 현황";
-            this.WeekSale.UseVisualStyleBackColor = true;
-            this.WeekSale.Click += new System.EventHandler(this.WeekSale_Click);
-            // 
             // MonthSale
             // 
-            this.MonthSale.Location = new System.Drawing.Point(52, 373);
+            this.MonthSale.Location = new System.Drawing.Point(52, 361);
             this.MonthSale.Name = "MonthSale";
             this.MonthSale.Size = new System.Drawing.Size(157, 28);
             this.MonthSale.TabIndex = 120;
@@ -193,34 +177,18 @@
             this.label4.TabIndex = 121;
             this.label4.Text = "년 총 매출";
             // 
-            // WeekChart
+            // MonthChart
             // 
             chartArea2.Name = "ChartArea1";
-            this.WeekChart.ChartAreas.Add(chartArea2);
+            this.MonthChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.WeekChart.Legends.Add(legend2);
-            this.WeekChart.Location = new System.Drawing.Point(302, 12);
-            this.WeekChart.Name = "WeekChart";
+            this.MonthChart.Legends.Add(legend2);
+            this.MonthChart.Location = new System.Drawing.Point(302, 12);
+            this.MonthChart.Name = "MonthChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.WeekChart.Series.Add(series2);
-            this.WeekChart.Size = new System.Drawing.Size(486, 377);
-            this.WeekChart.TabIndex = 123;
-            this.WeekChart.Text = "chart1";
-            // 
-            // MonthChart
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.MonthChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.MonthChart.Legends.Add(legend3);
-            this.MonthChart.Location = new System.Drawing.Point(302, 12);
-            this.MonthChart.Name = "MonthChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.MonthChart.Series.Add(series3);
+            this.MonthChart.Series.Add(series2);
             this.MonthChart.Size = new System.Drawing.Size(486, 377);
             this.MonthChart.TabIndex = 124;
             this.MonthChart.Text = "chart1";
@@ -231,11 +199,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MonthChart);
-            this.Controls.Add(this.WeekChart);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.MonthSale);
-            this.Controls.Add(this.WeekSale);
             this.Controls.Add(this.DaySales);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -250,7 +216,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.Shown += new System.EventHandler(this.Form3_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.DayChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WeekChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,11 +232,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DaySales;
-        private System.Windows.Forms.Button WeekSale;
         private System.Windows.Forms.Button MonthSale;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart WeekChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart MonthChart;
     }
 }
