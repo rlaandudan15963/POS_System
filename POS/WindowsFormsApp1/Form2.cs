@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         string MSsql = "Server=192.168.0.2; database=POS_Stuff; uid=sa; pwd=pos15963;";
         int WhatButton;
         string where;
+        string mybarcode;//자신의 바코드(수정에 쓰임)
         Form1 form1;
 
         public Form2(Form1 p)
@@ -74,6 +75,7 @@ namespace WindowsFormsApp1
             No.Enabled = true;
             AddInButton.Enabled = NotSaleButton.Enabled = comboBox1.Enabled = false;
             where = BarcodeBox.Text;
+            mybarcode = BarcodeBox.Text;
             WhatButton = 1;
         }
         private void ModiData(string key, string barcode, string name, string company, string price, string stuffcount)//데이터 수정, key는 수정할 항목을 찾을 키
@@ -196,6 +198,12 @@ namespace WindowsFormsApp1
                     {
                         break;
                     }
+                    //수정에서 바코드 중복 조건 = 원래 할당된 바코드와 다르면서 중복되는 바코드가 있을 경우
+                    else if (listView1.FindItemWithText(BarcodeBox.Text, false, 0) != null & BarcodeBox.Text != mybarcode)
+                    {
+                            MessageBox.Show("바코드가 중복되었습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
                     else
                     {
                         ModiData(where, BarcodeBox.Text, NameBox.Text, CompanyBox.Text, PriceBox.Text, StocBox.Text);
@@ -204,14 +212,21 @@ namespace WindowsFormsApp1
                     }    
                     
                 case 2:
-                    if (BarcodeBox.Text == "" || NameBox.Text == "" || PriceBox.Text == "" || StocBox.Text == "")
-                        MessageBox.Show("내용을 기입해 주십시오\n");
+                    if (Errcheck(BarcodeBox.Text, int.Parse(PriceBox.Text), int.Parse(StocBox.Text)))
+                    {
+                        break;
+                    }
+                    else if (listView1.FindItemWithText(BarcodeBox.Text, false, 0) != null)
+                    {
+                        MessageBox.Show("바코드가 중복되었습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
                     else
                     {
                         AddData(BarcodeBox.Text, NameBox.Text, CompanyBox.Text, PriceBox.Text, StocBox.Text);
                         yesback();
-                    }
-                    break;
+                        break;
+                    }                    
                 case 3:
                     DeleteData(where);
                     yesback();
@@ -307,11 +322,6 @@ namespace WindowsFormsApp1
             if (BarcodeBox.Text == "" || NameBox.Text == "" || PriceBox.Text == "" || StocBox.Text == "")
             {
                 MessageBox.Show("내용을 기입해 주십시오", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return true;
-            }
-            else if(listView1.FindItemWithText(barcode, false, 0) != null)
-            {
-                MessageBox.Show("바코드가 중복되었습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return true;
             }
             else if (price < 0)

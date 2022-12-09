@@ -407,6 +407,8 @@ namespace WindowsFormsApp1
             SqlDataReader dr;//데이터테이블에서 읽어오는 기능
             string salequery;//MSsql 데이터베이스에 쓰일 업데이트 명령어 문자열
             string getin = "";//가져온 재고수 임시 저장 -> (3)에 쓰임 [가독성을 위해 맨 위의 임시저장 변수와 별개로 생성함]
+            DateTime today = DateTime.Now;//오늘 날짜
+            string todaysale = "";//금일 매출
             if(pricelistBox.Items.Count == 0) MessageBox.Show("계산할 상품이 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);//예외처리(계산할 상품이 없을때)
             else
             {
@@ -428,6 +430,7 @@ namespace WindowsFormsApp1
                         cmd = new SqlCommand(getcount, con);//값 가져오는 명령어 접수
                         dr = cmd.ExecuteReader();//위의 명령어를 읽기 기능으로 실행
                         if(dr.Read()) getin = dr["Stuff_Count"].ToString();//아까의 조건으로 읽어온 정보 저장
+                        dr.Close();
                         getin = (int.Parse(getin) - int.Parse(pricelistBox.Items[i].SubItems[3].Text)).ToString();//계산한 만큼 재고수에서 빼기
                         salequery = "UPDATE Stuff SET Stuff_Count = " + getin + " where Barcode = " + pricelistBox.Items[i].SubItems[0].Text + ";";//재고수 업데이트
                         cmd = new SqlCommand(salequery, con);//위의 업데이트 명령어 접수
@@ -435,7 +438,28 @@ namespace WindowsFormsApp1
                     }
                     else MessageBox.Show("해당 상품을 처리하는데 오류가 발생하였습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);//예외처리
                 }
+                getcount = "select * From sale where SaleDate = '" + today.Year + "-" + today.Month + "-" + today.Day + "';";//매출 데이터베이스에서 금일 매출 가져오는 명령어
+                cmd = new SqlCommand(getcount, con);
+                dr = cmd.ExecuteReader();//읽기로 실행
+                if (dr.Read())//금일매출데이터가 있으면 업데이트
+                {
+                    todaysale = (int.Parse(dr["Day_sale"].ToString()) + int.Parse(saletextBox.Text)).ToString();//가져온 금일 매출에 계산한 가격총합을 더함
+                    dr.Close();
+                    salequery = "UPDATE sale SET Day_sale = " +todaysale+ " where SaleDate = '" + today.Year + "-" + today.Month + "-" + today.Day + "';";//업데이트 명령어
+                    cmd = new SqlCommand(salequery, con);//위의 업데이트 명령어 접수
+                    cmd.ExecuteNonQuery();//명령어 실행
+                }
+                else//금일 첫 게산이면
+                {
+                    dr.Close();
+                    salequery = "Insert Into dbo.sale (SaleDate, Day_sale) Values('" + today.Year + "-" + today.Month + "-" + today.Day + "', "+saletextBox.Text+");";//계산한 내용 추가
+                    cmd = new SqlCommand(salequery, con);
+                    cmd.ExecuteNonQuery();//명령어 실행
+                }
             }
+            con.Close();//데이터베이스 닫기
+            pricelistBox.Items.Clear();
+            saletextBox.Text = "0";
             Sale.Enabled = Stock.Enabled = true;
         }
         private void DeletePrice_Click(object sender, EventArgs e)
@@ -522,6 +546,7 @@ namespace WindowsFormsApp1
                     Sale.Enabled = Stock.Enabled = Payment.Enabled = DeletePrice.Enabled = CancelSale.Enabled = false;
                 }
                 else MessageBox.Show("등록된 상품이 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                con.Close();
             }            
         }
     }
