@@ -31,22 +31,28 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.SaleStuff = new System.Windows.Forms.Button();
             this.DayChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.TodaySale = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WeekMean = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.MonthMean = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DaySales = new System.Windows.Forms.Button();
             this.MonthSale = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.YearMean = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.MonthChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DayChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthChart)).BeginInit();
             this.SuspendLayout();
@@ -71,11 +77,14 @@
             this.DayChart.Name = "DayChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "일매출";
             this.DayChart.Series.Add(series1);
             this.DayChart.Size = new System.Drawing.Size(486, 377);
             this.DayChart.TabIndex = 111;
             this.DayChart.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "월 일 매출";
+            this.DayChart.Titles.Add(title1);
             // 
             // label1
             // 
@@ -96,16 +105,18 @@
             this.TodaySale.ReadOnly = true;
             this.TodaySale.Size = new System.Drawing.Size(230, 32);
             this.TodaySale.TabIndex = 113;
+            this.TodaySale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // WeekMean
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Font = new System.Drawing.Font("굴림", 16F);
-            this.textBox1.Location = new System.Drawing.Point(16, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(230, 32);
-            this.textBox1.TabIndex = 115;
+            this.WeekMean.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.WeekMean.Font = new System.Drawing.Font("굴림", 16F);
+            this.WeekMean.Location = new System.Drawing.Point(16, 104);
+            this.WeekMean.Name = "WeekMean";
+            this.WeekMean.ReadOnly = true;
+            this.WeekMean.Size = new System.Drawing.Size(230, 32);
+            this.WeekMean.TabIndex = 115;
+            this.WeekMean.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -117,15 +128,16 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "주 평균 매출";
             // 
-            // textBox2
+            // MonthMean
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox2.Font = new System.Drawing.Font("굴림", 16F);
-            this.textBox2.Location = new System.Drawing.Point(16, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(230, 32);
-            this.textBox2.TabIndex = 117;
+            this.MonthMean.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MonthMean.Font = new System.Drawing.Font("굴림", 16F);
+            this.MonthMean.Location = new System.Drawing.Point(16, 180);
+            this.MonthMean.Name = "MonthMean";
+            this.MonthMean.ReadOnly = true;
+            this.MonthMean.Size = new System.Drawing.Size(230, 32);
+            this.MonthMean.TabIndex = 117;
+            this.MonthMean.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -157,15 +169,16 @@
             this.MonthSale.UseVisualStyleBackColor = true;
             this.MonthSale.Click += new System.EventHandler(this.MonthSale_Click);
             // 
-            // textBox3
+            // YearMean
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox3.Font = new System.Drawing.Font("굴림", 16F);
-            this.textBox3.Location = new System.Drawing.Point(16, 251);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(230, 32);
-            this.textBox3.TabIndex = 122;
+            this.YearMean.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.YearMean.Font = new System.Drawing.Font("굴림", 16F);
+            this.YearMean.Location = new System.Drawing.Point(16, 251);
+            this.YearMean.Name = "YearMean";
+            this.YearMean.ReadOnly = true;
+            this.YearMean.Size = new System.Drawing.Size(230, 32);
+            this.YearMean.TabIndex = 122;
+            this.YearMean.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -187,25 +200,72 @@
             this.MonthChart.Name = "MonthChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "월매출";
             this.MonthChart.Series.Add(series2);
             this.MonthChart.Size = new System.Drawing.Size(486, 377);
             this.MonthChart.TabIndex = 124;
             this.MonthChart.Text = "chart1";
+            title2.Name = "Title1";
+            title2.Text = "년도 월 매출";
+            this.MonthChart.Titles.Add(title2);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 16F);
+            this.label5.Location = new System.Drawing.Point(252, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 22);
+            this.label5.TabIndex = 125;
+            this.label5.Text = "원";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 16F);
+            this.label6.Location = new System.Drawing.Point(252, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 22);
+            this.label6.TabIndex = 126;
+            this.label6.Text = "원";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 16F);
+            this.label7.Location = new System.Drawing.Point(252, 183);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 22);
+            this.label7.TabIndex = 127;
+            this.label7.Text = "원";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 16F);
+            this.label8.Location = new System.Drawing.Point(252, 254);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 22);
+            this.label8.TabIndex = 128;
+            this.label8.Text = "원";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.MonthChart);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.YearMean);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.MonthSale);
             this.Controls.Add(this.DaySales);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.MonthMean);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WeekMean);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TodaySale);
             this.Controls.Add(this.label1);
@@ -227,14 +287,18 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart DayChart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TodaySale;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WeekMean;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox MonthMean;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DaySales;
         private System.Windows.Forms.Button MonthSale;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox YearMean;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart MonthChart;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

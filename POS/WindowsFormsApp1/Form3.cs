@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
         int nowmonth, monthdays;
         int nowday;
         int todaysale, weeksale, monthsale, yearsale = 0;//금일 및 평균 매출 변수
+        int yearcount ,monthcount ,weekcount = 0;//결재 내역이 있는 날만 카운트해서 평균에 사용
         int[] eachday = new int[32];
         int[] eachmonth = new int[13];
         string MSsql = "Server=192.168.0.2; database=POS_Stuff; uid=sa; pwd=pos15963;";
@@ -41,30 +42,60 @@ namespace WindowsFormsApp1
             nowday = day.Day;
             nowmonth = day.Month;
             nowyear = day.Year;
-            monthdays = DateTime.DaysInMonth(day.Year, day.Month);//월 평균값 구하기 위한 일개수
+            monthdays = DateTime.DaysInMonth(day.Year, day.Month);
+            ;//월 평균값 구하기 위한 일 갯수
             SqlDataReader dr;
             SqlConnection con;
             con = new SqlConnection(MSsql);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Sale where Date like " + nowyear + "%;", con);
+            SqlCommand cmd = new SqlCommand("select * from Sale where convert(char(8), SaleDate, 112)  between "
+                + nowyear.ToString() + "0101 and "+ nowyear.ToString()+"1231;", con);
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.HasRows)
             {
-                day = (DateTime)dr["Date"];
-                yearsale += int.Parse(dr["Day_sale"].ToString());
-                if (day.Month == nowmonth)
+                while (dr.Read())
                 {
-                    monthsale += int.Parse(dr["Day_sale"].ToString());
-                    eachday[day.Day] = int.Parse(dr["Day_sale"].ToString());
-                    if (day.Day > nowday-4 | day.Day < nowday + 4)
+                    day = (DateTime)dr["SaleDate"];
+                    yearsale += int.Parse(dr["Day_sale"].ToString());
+                    eachmonth[day.Month] += int.Parse(dr["Day_sale"].ToString());
+                    yearcount += 1;
+                    if (day.Month == nowmonth)
                     {
-                        weeksale += int.Parse(dr["Day_sale"].ToString());
-                        if(day.Day == nowday)
+                        monthsale += int.Parse(dr["Day_sale"].ToString());
+                        eachday[day.Day] = int.Parse(dr["Day_sale"].ToString());
+                        monthcount += 1;
+                        if (day.Day > nowday-4 | day.Day < nowday + 4)
                         {
-                            todaysale = int.Parse(dr["Day_sale"].ToString());
+                            weeksale += int.Parse(dr["Day_sale"].ToString());
+                            weekcount += 1;
+                            if(day.Day == nowday)
+                            {
+                                todaysale = int.Parse(dr["Day_sale"].ToString());
+                            }
                         }
                     }
                 }
+            }
+            TodaySale.Text = todaysale.ToString();
+            if (weeksale == 0) WeekMean.Text = "0";
+            else WeekMean.Text = ((int)weeksale/weekcount).ToString();//매출에서 소숫값은 버리고 출력
+            if (monthsale == 0) MonthMean.Text = "0";
+            else MonthMean.Text = ((int)monthsale/monthcount).ToString();
+            if(yearcount == 0) YearMean.Text = "0";
+            else YearMean.Text = ((int)yearsale/yearcount).ToString();
+            DayChart.Series["일매출"].Points.Clear();
+            DayChart.Titles.Clear();
+            DayChart.Titles.Add(nowmonth.ToString() + "월 일매출");
+            MonthChart.Series["월매출"].Points.Clear();
+            MonthChart.Titles.Clear();
+            MonthChart.Titles.Add(nowyear.ToString() + "년도 월매출");
+            for(int i = 1; i <= monthdays; i++)
+            {
+                DayChart.Series["일매출"].Points.Add(eachday[i]);
+            }
+            for(int i = 1; i < 13; i++)
+            {
+                MonthChart.Series["월매출"].Points.Add(eachmonth[i]);
             }
         }
         private void SaleStuff_Click(object sender, EventArgs e)//뒤로가기 버튼 클릭
