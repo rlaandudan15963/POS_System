@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         //MSSQL 서버 연결용 문장
-        string MSsql = "Server=DESKTOP-CVCKE2N; database=POS_Stuff; uid=sa; pwd=pos15963;";
+        string MSsql = "Server=192.168.0.2; database=POS_Stuff; uid=sa; pwd=pos15963;";
         //아래 5개의 변수는 계산대에 추가할 상품의 정보를 임시로 저장해 리스트뷰에 넣는데 활용
         string stuffstr;//상품명 임시 저장할 변수
         int where;//상품 버튼 번호 임시 저장
