@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
@@ -281,6 +282,28 @@ namespace WindowsFormsApp1
                     }
             }
         }
+        private void Form1_Load(object sender, EventArgs e)//상품 버튼의 바코드 정보 초기화
+        {
+            for (int i = 1; i < 16; i++) stuffbarcode[i] = "";
+        }
+        private void Form1_Shown(object sender, EventArgs e)//재고관리에서 재고를 채워올 경우 버튼에 할당된 상품에 적용하는 과정
+        {
+            SqlConnection con = new SqlConnection(MSsql);//MSsql 서버 연결
+            con.Open();//DB열기
+            string getcount;//데이터를 가져올 명령어 문자열
+            SqlCommand cmd;//MSsql에 명령어를 실행시키는 기능
+            SqlDataReader dr;//데이터테이블에서 읽어오는 기능
+            for (int i = 1; i < 16; i++)
+            {
+                if (stuffbarcode[i] != "")//상품버튼에 상품이 할당된 경우
+                {
+                    getcount = "select * From Stuff where Barcode = " + stuffbarcode[i] + ";";//바코드로 해당 상품의 정보를 가져오는 명령어
+                    cmd = new SqlCommand(getcount, con);//값 가져오는 명령어 접수
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read()) stuffmany[i] = dr["Stuff_Count"].ToString();//재고수 갱신
+                }
+            }
+        }
         private void AddSalePrice(string addnum)//총 결재 금액 창에 금액 추가하는 메소드
         {
             saletextBox.Text = (int.Parse(saletextBox.Text)+int.Parse(addnum)).ToString();
@@ -474,6 +497,7 @@ namespace WindowsFormsApp1
                         stuffmany[j] = (int.Parse(stuffmany[j]) + int.Parse(pricelistBox.Items[index].SubItems[3].Text)).ToString();
                     }
                 }
+                saletextBox.Text = (int.Parse(saletextBox.Text) - int.Parse(pricelistBox.Items[index].SubItems[2].Text)).ToString();
                 pricelistBox.Items.RemoveAt(index);//선택된 결재 대기 상품 제거
                 if (pricelistBox.Items.Count == 0) Sale.Enabled = Stock.Enabled = true;//만일 제거해서 결재창이 비었다면 화면전환 활성화
             }
