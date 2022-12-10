@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                         monthsale += int.Parse(dr["Day_sale"].ToString());
                         eachday[day.Day] = int.Parse(dr["Day_sale"].ToString());
                         monthcount += 1;
-                        if (day.Day > nowday-4 | day.Day < nowday + 4)
+                        if (day.Day > nowday-8)
                         {
                             weeksale += int.Parse(dr["Day_sale"].ToString());
                             weekcount += 1;
