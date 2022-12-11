@@ -228,9 +228,19 @@ namespace WindowsFormsApp1
                         break;
                     }                    
                 case 3:
-                    DeleteData(where);
-                    yesback();
-                    break;
+                    int Findidx = Array.IndexOf(form1.stuffbarcode, BarcodeBox.Text);
+                    if (Findidx > -1)
+                    {
+                        MessageBox.Show("상품이 할당 되어 있습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
+                    else
+                    {
+                        DeleteData(where);
+                        yesback();
+                        break;
+                    }
+                    
             }
            
         }

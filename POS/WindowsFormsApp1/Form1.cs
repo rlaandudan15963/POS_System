@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
         //각 버튼별로 할당된 상품의 정보(인덱스 0은 사용안함)
-        string[] stuffbarcode = new string[16];
+        public string[] stuffbarcode = new string[16];
         string[] stuffname = new string[16];
         string[] stuffprice = new string[16];
         string[] stuffmany = new string[16];
